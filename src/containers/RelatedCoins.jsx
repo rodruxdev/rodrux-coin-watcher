@@ -4,7 +4,7 @@ function RelatedCoins({ children }) {
   return (
     <section>
       <h4>Related Coins</h4>
-      {children}
+      <div>{children}</div>
     </section>
   );
 }
