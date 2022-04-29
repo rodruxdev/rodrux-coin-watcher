@@ -1,12 +1,11 @@
 import React from 'react';
+import '../styles/components/Filter.css';
 
 function Filter() {
   return (
-    <div>
-      <select name="global" id="global">
-        <option value="Global">Global</option>
-      </select>
-    </div>
+    <select name="global" id="global" className="blue-box filter">
+      <option value="Global">Global</option>
+    </select>
   );
 }
 

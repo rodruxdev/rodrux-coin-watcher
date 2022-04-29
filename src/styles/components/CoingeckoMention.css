@@ -1,0 +1,18 @@
+.mention {
+  width: 90px;
+  height: 50px;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mention__text {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.mention_logo {
+  width: 90px;
+  height: 25px;
+}

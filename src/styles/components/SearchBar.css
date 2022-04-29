@@ -1,0 +1,30 @@
+.search-bar {
+  width: 80vw;
+  height: 40px;
+  margin: 30px auto;
+  background-color: transparent;
+  border: var(--primary-border);
+  border-radius: 4px;
+  position: relative;
+}
+
+.search-bar__input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.search-bar__logo {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+}

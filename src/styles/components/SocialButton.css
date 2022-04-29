@@ -1,0 +1,17 @@
+.social-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+}
+
+.social-button__link {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.social-button__logo {
+  width: 35px;
+  height: 35px;
+}

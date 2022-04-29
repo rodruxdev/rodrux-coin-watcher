@@ -1,0 +1,8 @@
+.hero-text {
+  width: 95vw;
+  margin: 30px auto;
+}
+
+.hero-text__paragraph {
+  margin-top: 10px;
+}
