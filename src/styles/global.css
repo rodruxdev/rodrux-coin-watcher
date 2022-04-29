@@ -43,7 +43,8 @@ html:focus-within {
 }
 
 body {
-  /* min-height: 100vh; */
+  max-width: 100vw;
+  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--background);
@@ -102,12 +103,27 @@ a:visited {
   html:focus-within {
     scroll-behavior: auto;
   }
-  *,
+  /* *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  } */
+}
+
+@media (min-width: 600px) {
+  h1, h2 {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+  }
+  p, a, span, input, button, select {
+    font-size: 2rem;
+    line-height: 2.6rem;
   }
 }

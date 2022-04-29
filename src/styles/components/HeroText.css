@@ -1,5 +1,6 @@
 .hero-text {
   width: 95vw;
+  max-width: 850px;
   margin: 30px auto;
 }
 

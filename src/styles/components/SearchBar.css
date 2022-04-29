@@ -1,5 +1,6 @@
 .search-bar {
   width: 80vw;
+  max-width: 500px;
   height: 40px;
   margin: 30px auto;
   background-color: transparent;
@@ -35,3 +36,16 @@
   height: 100%;
   color: var(--black);
 }
+
+@media (min-width: 600px) {
+  .search-bar {
+    height: 50px;
+  }
+  .search-bar__logo-container {
+    width: 25px;
+    height: 25px;
+    top: 12px;
+    bottom: 13px;
+  }
+}
+

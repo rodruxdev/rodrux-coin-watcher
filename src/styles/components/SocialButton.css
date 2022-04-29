@@ -16,3 +16,14 @@
   width: 35px;
   height: 35px;
 }
+
+@media (min-width: 600px) {
+  .social-button {
+    width: 60px;
+    height: 60px;
+  }
+  .social-button__logo {
+    width: 45px;
+    height: 45px;
+  }
+}
