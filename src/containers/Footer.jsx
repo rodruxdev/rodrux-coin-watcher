@@ -8,9 +8,9 @@ function Footer() {
     <footer className="footer">
       <CoingeckoMention />
       <ul className="footer__buttons">
-        <SocialButton />
-        <SocialButton />
-        <SocialButton />
+        <SocialButton box="blue" icon="web" />
+        <SocialButton box="orange" icon="github" />
+        <SocialButton box="blue" icon="linkedin" />
       </ul>
     </footer>
   );

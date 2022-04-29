@@ -2,6 +2,7 @@
   width: 45px;
   height: 45px;
   border-radius: 8px;
+  list-style: none;
 }
 
 .social-button__link {

@@ -9,7 +9,12 @@
 }
 
 .filters {
-  width: 100%;
+  max-width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
   overflow-x: scroll;
   margin-block: 10px;
 }

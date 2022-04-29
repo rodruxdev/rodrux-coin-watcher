@@ -14,7 +14,11 @@ function Home() {
       </section>
       <section className="coins-info">
         <div className="filters">
-          <Filter />
+          <Filter box="blue" optionList="Global" />
+          <Filter box="orange" optionList="USD" />
+          <Filter box="blue" optionList="Exchange" />
+          <Filter box="orange" optionList="Category" />
+          <Filter box="blue" optionList="Blockchain" />
         </div>
         <CoinsTable />
       </section>
