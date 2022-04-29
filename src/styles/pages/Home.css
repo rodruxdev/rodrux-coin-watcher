@@ -1,0 +1,15 @@
+.home {
+  min-height: calc(100vh - 185px);
+  margin-bottom: 30px;
+}
+
+.coins-info {
+  width: 95vw;
+  margin: 20px auto;
+}
+
+.filters {
+  width: 100%;
+  overflow-x: scroll;
+  margin-block: 10px;
+}

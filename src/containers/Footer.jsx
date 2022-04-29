@@ -1,12 +1,13 @@
 import React from 'react';
 import CoingeckoMention from '../components/CoingeckoMention';
 import SocialButton from '../components/SocialButton';
+import '../styles/containers/Footer.css';
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <CoingeckoMention />
-      <ul>
+      <ul className="footer__buttons">
         <SocialButton />
         <SocialButton />
         <SocialButton />

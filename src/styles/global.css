@@ -43,7 +43,7 @@ html:focus-within {
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--background);
@@ -62,12 +62,6 @@ picture {
   display: block;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
 
 h1, h2 {
   font-style: normal;

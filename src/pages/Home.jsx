@@ -3,16 +3,17 @@ import CoinsTable from '../containers/CoinsTable';
 import HeroText from '../components/HeroText';
 import SearchBar from '../components/SearchBar';
 import Filter from '../components/Filter';
+import '../styles/pages/Home.css';
 
 function Home() {
   return (
-    <main>
+    <main className="home">
       <section>
         <HeroText />
         <SearchBar />
       </section>
-      <section>
-        <div>
+      <section className="coins-info">
+        <div className="filters">
           <Filter />
         </div>
         <CoinsTable />
