@@ -1,0 +1,26 @@
+.price {
+  width: 100vw;
+  display: flex;
+  padding-inline: 19px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price__coin-container{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price__image-container {
+  width: 26px;
+  height: 26px;
+}
+
+.price__price {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: var(--primary);
+}

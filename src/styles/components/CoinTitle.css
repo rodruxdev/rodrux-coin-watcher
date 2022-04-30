@@ -1,0 +1,16 @@
+.coin-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.coin-title__image-container {
+  width: 70px;
+  height: 70px;
+}
+
+.coin-title__text {
+  text-align: center;
+}

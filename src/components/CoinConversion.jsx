@@ -1,9 +1,15 @@
 import React from 'react';
+import '../styles/components/CoinConversion.css';
 
 function CoinConversion() {
   return (
-    <div>
-      <input type="number" min="0" value={1} />
+    <div className="input-convertor">
+      <input
+        type="number"
+        min="0"
+        value={1}
+        className="input-convertor__input"
+      />
     </div>
   );
 }

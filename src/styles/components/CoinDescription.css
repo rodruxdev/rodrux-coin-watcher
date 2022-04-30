@@ -1,0 +1,9 @@
+.description {
+  margin-block: 30px;
+}
+
+.description__text {
+  width: 90%;
+  margin-top: 5px;
+  margin-inline: auto;
+}

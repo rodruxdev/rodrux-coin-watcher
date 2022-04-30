@@ -6,6 +6,7 @@
   --dark: #1E3242;
   --primary-border: 2px solid var(--primary);
   --secondary-border: 2px solid var(--secondary);
+  --dark-border: 2px solid var(--dark);
 }
 
 *,
@@ -78,15 +79,25 @@ h3 {
   line-height: 2.6rem;
 }
 
-p, a, span, input, button, select {
+p, a, span, input, button, select, h4 {
   font-style: normal;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.1rem;
 }
 
+h4 {
+  font-weight: 600;
+}
+
 a:visited {
   color: inherit;
+}
+
+select {
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
 }
 
 .blue-box {

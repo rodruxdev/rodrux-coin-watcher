@@ -1,0 +1,15 @@
+.info {
+  width: 100%;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info:nth-child(2n) {
+  border-bottom: var(--primary-border);
+}
+
+.info:nth-child(2n + 1) {
+  border-bottom: var(--secondary-border);
+}

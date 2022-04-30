@@ -1,0 +1,29 @@
+.pair {
+  width: 110px;
+  height: 35px;
+  position: relative;
+}
+
+.pair_selector {
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  border: var(--secondary-border);
+  border-radius: 8px;
+  background-color: transparent;
+  position: absolute;
+}
+
+.pair__icon-container {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 4px;
+}
+
+.pair__icon {
+  width: 100%;
+  height: 100%;
+  color: var(--black);
+}

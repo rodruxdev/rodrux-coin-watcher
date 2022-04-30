@@ -1,12 +1,11 @@
 import React from 'react';
+import '../styles/components/ExchangeSelector.css';
 
 function ExchangeSelector() {
   return (
-    <div>
-      <select name="exchange" id="exchange">
-        <option value="Binance">Binance</option>
-      </select>
-    </div>
+    <select name="exchange" id="exchange" className="exchange blue-box">
+      <option value="Binance">Binance</option>
+    </select>
   );
 }
 

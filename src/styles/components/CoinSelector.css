@@ -1,0 +1,30 @@
+.coin-selector {
+  width: 90px;
+  height: 50px;
+  position: relative;
+}
+
+.coin-selector__selector {
+  width: 100%;
+  height: 100%;
+  padding-left: 15px;
+  border-radius: 8px;
+  border: var(--primary-border);
+  background-color: transparent;
+  position: absolute;
+}
+
+.coin-selector__icon-container {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  right: 7px;
+}
+
+.coin-selector__icon {
+  width: 100%;
+  height: 100%;
+  color: var(--black);
+}
