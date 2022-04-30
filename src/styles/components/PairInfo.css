@@ -18,3 +18,16 @@
   text-align: end;
   vertical-align: middle;
 }
+
+@media (min-width: 600px) {
+  .pair-info {
+    width: 240px;
+  }
+  .pair-info__title {
+    padding-left: 10px;
+  }
+  .pair-info__info {
+    height: 40px;
+    padding-right: 10px;
+  }
+}

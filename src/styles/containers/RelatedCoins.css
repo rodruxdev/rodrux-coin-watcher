@@ -1,16 +1,28 @@
 .related-coins {
   width: 100%;
-  margin: 30px auto;
+  margin: 20px auto;
+}
+
+.related-coins__carrousel-container {
+  width: 94vw;
+  max-width: 1745px;
+  padding-block: 10px;
+  margin-top: 15px;
+  margin-inline: auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 .related-coins__carrousel {
-  width: 94vw;
-  margin-top: 15px;
-  margin-inline: auto;
+  width: min-content;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
+}
+
+@media (min-width: 950px) {
+  .related-coins__carrousel {
+    gap: 25px;
+  }
 }

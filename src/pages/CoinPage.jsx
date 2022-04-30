@@ -23,61 +23,79 @@ function CoinPage() {
       </section>
       <section>
         <CoinPrice />
-        <CoinDescription />
-        <div>
-          <h4>More Information</h4>
-          <CoinMoreInfo />
-          <CoinMoreInfo />
-          <CoinMoreInfo />
-        </div>
-        <div className="coin-convertor">
-          <div className="coin-convertor__container">
-            <CoinSelector />
-            <CoinConversion />
-          </div>
-          <SwitchButton />
-          <div className="coin-convertor__container">
-            <CoinSelector />
-            <CoinConversion />
+        <div className="coin-info">
+          <CoinDescription />
+          <div className="coin-info__container">
+            <h4>More Information</h4>
+            <CoinMoreInfo />
+            <CoinMoreInfo />
+            <CoinMoreInfo />
           </div>
         </div>
-        <div>
-          <h4>Exchange Pair</h4>
-          <div className="exchanges-container">
-            <ExchangePair>
-              <div className="exchange-info__container">
-                <ExchangeSelector />
-                <PairSelector />
-              </div>
-              <div className="exchange-info__container exchange-info__info">
-                <PairInfo />
-                <PairInfo />
-              </div>
-            </ExchangePair>
-            <ExchangePair>
-              <div className="exchange-info__container">
-                <ExchangeSelector />
-                <PairSelector />
-              </div>
-              <div className="exchange-info__container exchange-info__info">
-                <PairInfo />
-                <PairInfo />
-              </div>
-            </ExchangePair>
-            <ExchangePair>
-              <div className="exchange-info__container">
-                <ExchangeSelector />
-                <PairSelector />
-              </div>
-              <div className="exchange-info__container exchange-info__info">
-                <PairInfo />
-                <PairInfo />
-              </div>
-            </ExchangePair>
+        <div className="flexb">
+          <div className="coin-convertor">
+            <div className="coin-convertor__container">
+              <CoinSelector />
+              <CoinConversion />
+            </div>
+            <SwitchButton />
+            <div className="coin-convertor__container">
+              <CoinSelector />
+              <CoinConversion />
+            </div>
+          </div>
+          <div>
+            <h4>Exchange Pair</h4>
+            <div className="exchanges-container">
+              <ExchangePair>
+                <div className="exchange-info__container">
+                  <ExchangeSelector />
+                  <PairSelector />
+                </div>
+                <div className="exchange-info__container exchange-info__info">
+                  <PairInfo />
+                  <PairInfo />
+                </div>
+              </ExchangePair>
+              <ExchangePair>
+                <div className="exchange-info__container">
+                  <ExchangeSelector />
+                  <PairSelector />
+                </div>
+                <div className="exchange-info__container exchange-info__info">
+                  <PairInfo />
+                  <PairInfo />
+                </div>
+              </ExchangePair>
+              <ExchangePair>
+                <div className="exchange-info__container">
+                  <ExchangeSelector />
+                  <PairSelector />
+                </div>
+                <div className="exchange-info__container exchange-info__info">
+                  <PairInfo />
+                  <PairInfo />
+                </div>
+              </ExchangePair>
+            </div>
           </div>
         </div>
       </section>
       <RelatedCoins>
+        <CoinCard>
+          <CoinTitle />
+          <div>
+            <PairInfo />
+            <PairInfo />
+          </div>
+        </CoinCard>
+        <CoinCard>
+          <CoinTitle />
+          <div>
+            <PairInfo />
+            <PairInfo />
+          </div>
+        </CoinCard>
         <CoinCard>
           <CoinTitle />
           <div>

@@ -5,3 +5,11 @@
   border: none;
   text-align: center;
 }
+
+@media (min-width: 600px) {
+  .exchange {
+    width: 165px;
+    height: 53px;
+    border-radius: 14px;
+  }
+}

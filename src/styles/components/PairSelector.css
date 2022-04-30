@@ -27,3 +27,20 @@
   height: 100%;
   color: var(--black);
 }
+
+@media (min-width: 600px) {
+  .pair {
+    width: 165px;
+    height: 53px;
+    border-radius: 14px;
+  }
+  .pair_selector {
+    padding-left: 10px;
+  }
+  .pair__icon-container {
+    width: 30px;
+    height: 30px;
+    top: 12px;
+    right: 6px;
+  }
+}

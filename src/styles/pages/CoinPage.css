@@ -1,5 +1,7 @@
 .coin-page {
   width: 100vw;
+  max-width: 1745px;
+  margin-inline: auto;
   padding: 2vw;
 }
 
@@ -10,9 +12,11 @@
 .coin-convertor {
   width: 100%;
   margin: 30px auto;
-  display: grid;
-  place-items: center;
-  row-gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .coin-convertor__container {
@@ -28,6 +32,7 @@
 }
 
 .exchanges-container {
+  margin: 20px auto;
   display: grid;
   place-items: center;
   row-gap: 10px;
@@ -41,4 +46,37 @@
 
 .exchange-info__info {
   gap: 0;
+}
+
+@media (min-width: 950px) {
+  .coin-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+  .coin-info__container {
+    width: 100%;
+  }
+  .exchanges-container {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .exchanges-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .flexb {
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
 }

@@ -12,3 +12,13 @@
   border-radius: 8px;
   border: var(--dark-border);
 }
+
+@media (min-width: 600px) {
+  .input-convertor {
+    width: 315px;
+    height: 75px;
+  }
+  .input-convertor__input{
+    border-radius: 16px;
+  }
+}

@@ -28,3 +28,20 @@
   height: 100%;
   color: var(--black);
 }
+
+@media (min-width: 600px) {
+  .coin-selector {
+    width: 135px;
+    height: 75px;
+  }
+  .coin-selector__selector{
+    border-radius: 14px;
+  }
+  .coin-selector__icon-container {
+    width: 30px;
+    height: 30px;
+    top: 24px;
+    bottom: 24px;
+    right: 11px;
+  }
+}

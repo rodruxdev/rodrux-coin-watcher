@@ -87,6 +87,7 @@ p, a, span, input, button, select, h4 {
 }
 
 h4 {
+  padding-left: 15px;
   font-weight: 600;
 }
 
@@ -133,7 +134,7 @@ select {
     font-size: 2.4rem;
     line-height: 3.1rem;
   }
-  p, a, span, input, button, select {
+  p, a, span, input, button, select, h4 {
     font-size: 2rem;
     line-height: 2.6rem;
   }
