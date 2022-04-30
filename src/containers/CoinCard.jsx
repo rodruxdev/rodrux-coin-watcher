@@ -1,7 +1,8 @@
 import React from 'react';
+import '../styles/containers/CoinCard.css';
 
 function CoinCard({ children }) {
-  return <div>{children}</div>;
+  return <div className="card">{children}</div>;
 }
 
 export default CoinCard;

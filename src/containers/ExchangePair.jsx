@@ -1,12 +1,13 @@
 import React from 'react';
+import '../styles/containers/ExchangePair.css';
 
 function ExchangePair({ children }) {
   return (
-    <div>
-      <div>
+    <div className="exchange-info">
+      <div className="exchange-info__image">
         <img src="/" alt="Exchange Logo" />
       </div>
-      <div>{children}</div>
+      {children}
     </div>
   );
 }

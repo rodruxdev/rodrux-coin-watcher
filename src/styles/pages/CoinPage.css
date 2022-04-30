@@ -1,0 +1,44 @@
+.coin-page {
+  width: 100vw;
+  padding: 2vw;
+}
+
+.search {
+  margin: 30px;
+}
+
+.coin-convertor {
+  width: 100%;
+  margin: 30px auto;
+  display: grid;
+  place-items: center;
+  row-gap: 15px;
+}
+
+.coin-convertor__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.coin-convertor__container:last-child .coin-selector__selector{
+  border: var(--secondary-border);
+}
+
+.exchanges-container {
+  display: grid;
+  place-items: center;
+  row-gap: 10px;
+}
+
+.exchange-info__container {
+  display: grid;
+  place-items: center;
+  row-gap: 10px;
+}
+
+.exchange-info__info {
+  gap: 0;
+}

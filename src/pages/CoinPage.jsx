@@ -13,11 +13,12 @@ import PairInfo from '../components/PairInfo';
 import RelatedCoins from '../containers/RelatedCoins';
 import CoinTitle from '../components/CoinTitle';
 import CoinCard from '../containers/CoinCard';
+import '../styles/pages/CoinPage.css';
 
 function CoinPage() {
   return (
-    <main>
-      <section>
+    <main className="coin-page">
+      <section className="search">
         <SearchBar />
       </section>
       <section>
@@ -29,32 +30,75 @@ function CoinPage() {
           <CoinMoreInfo />
           <CoinMoreInfo />
         </div>
-        <div>
-          <div>
+        <div className="coin-convertor">
+          <div className="coin-convertor__container">
             <CoinSelector />
             <CoinConversion />
           </div>
           <SwitchButton />
-          <div>
+          <div className="coin-convertor__container">
             <CoinSelector />
             <CoinConversion />
           </div>
         </div>
         <div>
           <h4>Exchange Pair</h4>
-          <ExchangePair>
-            <div>
-              <ExchangeSelector />
-              <PairSelector />
-            </div>
-            <div>
-              <PairInfo />
-              <PairInfo />
-            </div>
-          </ExchangePair>
+          <div className="exchanges-container">
+            <ExchangePair>
+              <div className="exchange-info__container">
+                <ExchangeSelector />
+                <PairSelector />
+              </div>
+              <div className="exchange-info__container exchange-info__info">
+                <PairInfo />
+                <PairInfo />
+              </div>
+            </ExchangePair>
+            <ExchangePair>
+              <div className="exchange-info__container">
+                <ExchangeSelector />
+                <PairSelector />
+              </div>
+              <div className="exchange-info__container exchange-info__info">
+                <PairInfo />
+                <PairInfo />
+              </div>
+            </ExchangePair>
+            <ExchangePair>
+              <div className="exchange-info__container">
+                <ExchangeSelector />
+                <PairSelector />
+              </div>
+              <div className="exchange-info__container exchange-info__info">
+                <PairInfo />
+                <PairInfo />
+              </div>
+            </ExchangePair>
+          </div>
         </div>
       </section>
       <RelatedCoins>
+        <CoinCard>
+          <CoinTitle />
+          <div>
+            <PairInfo />
+            <PairInfo />
+          </div>
+        </CoinCard>
+        <CoinCard>
+          <CoinTitle />
+          <div>
+            <PairInfo />
+            <PairInfo />
+          </div>
+        </CoinCard>
+        <CoinCard>
+          <CoinTitle />
+          <div>
+            <PairInfo />
+            <PairInfo />
+          </div>
+        </CoinCard>
         <CoinCard>
           <CoinTitle />
           <div>
