@@ -35,3 +35,9 @@
     line-height: 3.1rem;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .price__price {
+    color: var(--secondary);
+  }
+}

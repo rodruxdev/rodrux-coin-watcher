@@ -84,6 +84,7 @@ p, a, span, input, button, select, h4 {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.1rem;
+  color: inherit;
 }
 
 h4 {
@@ -137,5 +138,19 @@ select {
   p, a, span, input, button, select, h4 {
     font-size: 2rem;
     line-height: 2.6rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1E3242;
+    --dark: #E9E6E9;
+    --black: #E9E6E9;
+  }
+  .blue-box {
+    color: var(--dark);
+  }
+  .orange-box {
+    color: #060B10;
   }
 }

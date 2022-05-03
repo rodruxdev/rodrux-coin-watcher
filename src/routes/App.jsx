@@ -1,13 +1,13 @@
 import React from 'react';
 import Footer from '../containers/Footer';
 import Header from '../containers/Header';
-import CoinPage from '../pages/CoinPage';
+import Home from '../pages/Home';
 
 function App() {
   return (
     <>
       <Header />
-      <CoinPage />
+      <Home />
       <Footer />
     </>
   );
