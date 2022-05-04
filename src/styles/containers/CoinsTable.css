@@ -1,0 +1,108 @@
+.table-container {
+  width: 95vw;
+  max-width: 1250px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.table-container__table {
+  width: max-content;
+  border-collapse: collapse;
+}
+
+th,
+tr:nth-child(2n) td{
+  border-bottom: var(--primary-border);
+}
+
+td {
+  border-bottom: var(--secondary-border);
+}
+
+.table-head {
+  height: 25px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: inherit;
+}
+
+.table-row {
+  height: 35px;
+}
+
+.table-row--right {
+  text-align: end;
+}
+
+.table-row--center {
+  text-align: center;
+}
+
+.table-col__id {
+  width: 30px;
+}
+
+.table-col__coin {
+  width: 90px;
+}
+
+.table-col__price {
+  width: 120px;
+}
+
+.table-col__medium {
+  width: 90px;
+}
+
+.table-col__large {
+  width: 160px;
+}
+
+.table-row__last {
+  padding-right: 10px;
+}
+
+.table-row__coin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.image-container {
+  width: 25px;
+  height: 25px;
+}
+
+@media (min-width: 600px) {
+  .table-head {
+    height: 38px;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+  }
+  .table-row {
+    height: 55px;
+  }
+  .table-col__id {
+    width: 45px;
+  }
+  .table-col__coin {
+    width: 135px;
+  }
+  .table-col__price {
+    width: 180px;
+  }
+  .table-col__medium {
+    width: 135px;
+  }
+  .table-col__large {
+    width: 240px;
+  }
+  .image-container {
+    width: 38px;
+    height: 38px;
+  }
+}

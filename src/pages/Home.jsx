@@ -4,6 +4,7 @@ import HeroText from '../components/HeroText';
 import SearchBar from '../components/SearchBar';
 import Filter from '../components/Filter';
 import '../styles/pages/Home.css';
+import TableRow from '../components/TableRow';
 
 function Home() {
   return (
@@ -20,7 +21,11 @@ function Home() {
           <Filter box="orange" optionList="Category" />
           <Filter box="blue" optionList="Blockchain" />
         </div>
-        <CoinsTable />
+        <CoinsTable>
+          <TableRow />
+          <TableRow />
+          <TableRow />
+        </CoinsTable>
       </section>
     </main>
   );
