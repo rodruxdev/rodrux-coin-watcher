@@ -1,0 +1,27 @@
+.switch {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark);
+  display: grid;
+  place-items: center;
+}
+
+.switch__icon {
+  width: 30px;
+  height: 30px;
+  color: var(--background);
+}
+
+@media (min-width: 600px) {
+  .switch {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+  }
+  .switch__icon {
+    width: 45px;
+    height: 45px;
+  }
+}
