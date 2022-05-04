@@ -1,6 +1,6 @@
 .mention {
-  width: 90px;
-  height: 50px;
+  width: 100px;
+  height: 60px;
   padding: 5px 0;
   display: flex;
   flex-direction: column;
@@ -15,22 +15,23 @@
 }
 
 .mention_logo {
-  width: 90px;
-  height: 25px;
+  width: 100px;
+  height: 35px;
+  padding: 5px;
 }
 
 @media (min-width: 600px) {
   .mention {
-    width: 110px;
-    height: 70px;
+    width: 120px;
+    height: 80px;
   }
   .mention__text {
     font-size: 1.4rem;
     line-height: 1.8rem;
   }
   .mention_logo {
-    width: 110px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
   }
 }
 
