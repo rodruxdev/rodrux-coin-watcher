@@ -11,6 +11,7 @@ function SearchBar() {
         id={control}
         placeholder="Bitcoin"
         className="search-bar__input"
+        aria-label="search"
       />
       <label htmlFor={control} className="search-bar__logo-container">
         <MdSearch className="search-bar__logo" />

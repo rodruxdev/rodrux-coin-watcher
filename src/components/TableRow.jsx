@@ -30,7 +30,7 @@ function TableRow() {
         <span>$772,504,060,812</span>
       </td>
       <td className="table-row--right table-row__last">
-        <span>$32,839,886,478 </span>
+        <span>$32,839,886,478</span>
       </td>
     </tr>
   );
