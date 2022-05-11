@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/containers/RelatedCoins.css';
+import '@styles/containers/RelatedCoins.css';
 
 function RelatedCoins({ children }) {
   return (

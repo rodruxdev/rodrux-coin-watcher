@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/CoinPrice.css';
+import '@styles/components/CoinPrice.css';
 
 function CoinPrice() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import TableHead from '../components/TableHead';
-import '../styles/containers/CoinsTable.css';
+import TableHead from '@components/TableHead';
+import '@styles/containers/CoinsTable.css';
 
 function CoinsTable({ children }) {
   return (

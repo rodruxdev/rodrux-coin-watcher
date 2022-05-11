@@ -1,11 +1,16 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import '../styles/components/PairSelector.css';
+import '@styles/components/PairSelector.css';
 
 function PairSelector() {
   return (
     <div className="pair">
-      <select name="pair" id="pair" className="pair_selector">
+      <select
+        name="pair"
+        id="pair"
+        className="pair_selector"
+        aria-label="pair selector"
+      >
         <option value="BTC/USDT">BTC/USDT</option>
       </select>
       <label htmlFor="coin" className="pair__icon-container">

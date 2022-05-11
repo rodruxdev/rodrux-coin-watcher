@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdWeb } from 'react-icons/md';
-import '../styles/components/SocialButton.css';
+import '@styles/components/SocialButton.css';
 
 const icons = {
   web: <MdWeb className="social-button__logo" />,

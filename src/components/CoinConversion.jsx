@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/CoinConversion.css';
+import '@styles/components/CoinConversion.css';
 
 function CoinConversion() {
   return (
@@ -9,6 +9,7 @@ function CoinConversion() {
         min="0"
         value={1}
         className="input-convertor__input"
+        aria-label="coin convertor"
       />
     </div>
   );

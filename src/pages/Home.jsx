@@ -1,10 +1,10 @@
 import React from 'react';
-import CoinsTable from '../containers/CoinsTable';
-import HeroText from '../components/HeroText';
-import SearchBar from '../components/SearchBar';
-import Filter from '../components/Filter';
-import '../styles/pages/Home.css';
-import TableRow from '../components/TableRow';
+import CoinsTable from '@containers/CoinsTable';
+import HeroText from '@components/HeroText';
+import SearchBar from '@components/SearchBar';
+import Filter from '@components/Filter';
+import '@styles/pages/Home.css';
+import TableRow from '@components/TableRow';
 
 function Home() {
   return (

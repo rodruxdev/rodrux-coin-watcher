@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdSearch } from 'react-icons/md';
-import '../styles/components/SearchBar.css';
+import '@styles/components/SearchBar.css';
 
 function SearchBar() {
   const control = 'searchbar';
@@ -11,6 +11,7 @@ function SearchBar() {
         id={control}
         placeholder="Bitcoin"
         className="search-bar__input"
+        aria-label="search"
       />
       <label htmlFor={control} className="search-bar__logo-container">
         <MdSearch className="search-bar__logo" />
