@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdSwapVert } from 'react-icons/md';
-import '../styles/components/SwitchButton.css';
+import '@styles/components/SwitchButton.css';
 
 function SwitchButton() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/ExchangeSelector.css';
+import '@styles/components/ExchangeSelector.css';
 
 function ExchangeSelector() {
   return (

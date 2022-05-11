@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/PairInfo.css';
+import '@styles/components/PairInfo.css';
 
 function PairInfo() {
   return (

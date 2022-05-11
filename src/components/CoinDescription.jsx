@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/CoinDescription.css';
+import '@styles/components/CoinDescription.css';
 
 function CoinDescription() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/CoingeckoMention.css';
+import '@styles/components/CoingeckoMention.css';
 
 function CoingeckoMention() {
   return (

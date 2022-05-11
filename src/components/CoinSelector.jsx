@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import '../styles/components/CoinSelector.css';
+import '@styles/components/CoinSelector.css';
 
 function CoinSelector() {
   return (

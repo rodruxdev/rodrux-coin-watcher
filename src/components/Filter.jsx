@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/Filter.css';
+import '@styles/components/Filter.css';
 
 function Filter({ box, optionList }) {
   return (

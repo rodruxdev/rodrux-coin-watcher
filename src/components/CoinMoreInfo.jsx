@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/CoinMoreInfo.css';
+import '@styles/components/CoinMoreInfo.css';
 
 function CoinMoreInfo() {
   return (

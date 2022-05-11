@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdSearch } from 'react-icons/md';
-import '../styles/components/SearchBar.css';
+import '@styles/components/SearchBar.css';
 
 function SearchBar() {
   const control = 'searchbar';

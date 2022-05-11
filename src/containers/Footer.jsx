@@ -1,7 +1,7 @@
 import React from 'react';
-import CoingeckoMention from '../components/CoingeckoMention';
-import SocialButton from '../components/SocialButton';
-import '../styles/containers/Footer.css';
+import CoingeckoMention from '@components/CoingeckoMention';
+import SocialButton from '@components/SocialButton';
+import '@styles/containers/Footer.css';
 
 function Footer() {
   return (

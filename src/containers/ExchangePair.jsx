@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/containers/ExchangePair.css';
+import '@styles/containers/ExchangePair.css';
 
 function ExchangePair({ children }) {
   return (

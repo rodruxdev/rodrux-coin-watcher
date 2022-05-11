@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import CoinMoreInfo from '../../components/CoinMoreInfo';
+import CoinMoreInfo from '@components/CoinMoreInfo';
 
 describe('CoinMoreInfo Tests', () => {
   test('renders content', () => {

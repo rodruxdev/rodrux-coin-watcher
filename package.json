@@ -56,7 +56,8 @@
       "node_modules"
     ],
     "moduleNameMapper": {
-      "\\.(css|less)$": "identity-obj-proxy"
+      "\\.(css|less)$": "identity-obj-proxy",
+      "^@components(.*)$": "<rootDir>/src/components/$1"
     },
     "testEnvironment": "jest-environment-jsdom"
   }

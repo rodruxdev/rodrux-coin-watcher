@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import TableRow from '../../components/TableRow';
+import TableRow from '@components/TableRow';
 
 describe('CoinMoreInfo Tests', () => {
   test('renders content', () => {

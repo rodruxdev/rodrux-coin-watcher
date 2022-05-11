@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import '../styles/components/PairSelector.css';
+import '@styles/components/PairSelector.css';
 
 function PairSelector() {
   return (
