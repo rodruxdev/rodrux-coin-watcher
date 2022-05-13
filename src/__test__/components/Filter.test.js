@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import Filter from '@components/Filter';
 
-describe('CoinMoreInfo Tests', () => {
+describe('Filter Tests', () => {
   test('renders content', () => {
     const box = 'orange';
     const optionList = 'BTC';
