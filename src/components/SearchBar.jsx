@@ -2,7 +2,8 @@ import React from 'react';
 import { MdSearch, MdClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import '@styles/components/SearchBar.css';
-import { updateSearch } from '../slices/uiSlice';
+import { updateSearch } from '@slices/uiSlice';
+import { updateCoins } from '@slices/tableSlice';
 
 function SearchBar() {
   const [search, setSearch] = React.useState('');
@@ -12,6 +13,7 @@ function SearchBar() {
     if (event?.key === 'Enter') {
       if (search !== '') {
         dispatch(updateSearch(search));
+        dispatch(updateCoins(search));
       }
     }
   };

@@ -1,36 +1,52 @@
 import React from 'react';
 
-function TableRow() {
+function TableRow({
+  coinId,
+  name,
+  ticker,
+  // images,
+  price,
+  marketCap,
+  percentageChanges,
+  ath,
+  athPercentage,
+}) {
   return (
     <tr className="table-row">
       <td className="table-row--center">
-        <span>1</span>
+        <span>{coinId}</span>
       </td>
       <td className="table-row--center">
         <a className="table-row__coin" href="/">
           <div className="image-container">
             <img src="/" alt="" />
           </div>
-          <span>BTC</span>
+          <p>
+            <span className="table-row__coin-name">{name}</span>
+            <span> {ticker}</span>
+          </p>
         </a>
       </td>
       <td className="table-row--right">
-        <span>$0.00002452</span>
+        <span>${price}</span>
       </td>
       <td className="table-row--right">
-        <span>1234.5%</span>
+        <span>{percentageChanges[0]}%</span>
       </td>
       <td className="table-row--right">
-        <span>-2.5%</span>
+        <span>{percentageChanges[1]}%</span>
       </td>
       <td className="table-row--right">
-        <span>1.7%</span>
+        <span>{percentageChanges[2]}%</span>
       </td>
       <td className="table-row--right">
-        <span>$772,504,060,812</span>
+        <span>${marketCap}</span>
+      </td>
+      <td className="table-row--right">
+        <span>${ath}</span>
       </td>
       <td className="table-row--right table-row__last">
-        <span>$32,839,886,478</span>
+        <span>{athPercentage}%</span>
       </td>
     </tr>
   );
