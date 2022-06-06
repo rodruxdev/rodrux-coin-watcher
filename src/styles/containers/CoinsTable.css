@@ -72,6 +72,10 @@ td {
   text-decoration: none;
 }
 
+.table-row__coin-name {
+  display: none;
+}
+
 .image-container {
   width: 25px;
   height: 25px;
@@ -90,7 +94,7 @@ td {
     width: 45px;
   }
   .table-col__coin {
-    width: 135px;
+    width: max-content;
   }
   .table-col__price {
     width: 180px;
@@ -100,6 +104,9 @@ td {
   }
   .table-col__large {
     width: 240px;
+  }
+  .table-row__coin-name {
+    display: inline;
   }
   .image-container {
     width: 38px;

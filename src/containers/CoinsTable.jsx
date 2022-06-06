@@ -14,7 +14,8 @@ function CoinsTable({ children }) {
           <col className="table-col__medium" />
           <col className="table-col__medium" />
           <col className="table-col__large" />
-          <col className="table-col__large" />
+          <col className="table-col__medium" />
+          <col className="table-col__medium" />
         </colgroup>
         <TableHead />
         <tbody>{children}</tbody>

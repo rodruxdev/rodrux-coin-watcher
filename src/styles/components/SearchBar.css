@@ -20,6 +20,7 @@
   right: 0;
   left: 0;
   bottom: 0;
+  z-index: 0;
 }
 
 .search-bar__input::-webkit-search-cancel-button {
@@ -34,12 +35,22 @@
   top: 9px;
   bottom: 10px;
   right: 15px;
+  z-index: 2;
+}
+
+.search-bar__logo-button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 }
 
 .search-bar__logo {
   width: 100%;
   height: 100%;
   color: var(--black);
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {

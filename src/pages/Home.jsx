@@ -2,11 +2,12 @@ import React from 'react';
 import CoinsTable from '@containers/CoinsTable';
 import HeroText from '@components/HeroText';
 import SearchBar from '@components/SearchBar';
-import Filter from '@components/Filter';
-import '@styles/pages/Home.css';
 import TableRow from '@components/TableRow';
+import { useSelector } from 'react-redux';
+import '@styles/pages/Home.css';
 
 function Home() {
+  const coins = useSelector((state) => state.table.coins);
   return (
     <main className="home">
       <section>
@@ -14,17 +15,32 @@ function Home() {
         <SearchBar />
       </section>
       <section className="coins-info">
-        <div className="filters">
-          <Filter box="blue" optionList="Global" />
-          <Filter box="orange" optionList="USD" />
-          <Filter box="blue" optionList="Exchange" />
-          <Filter box="orange" optionList="Category" />
-          <Filter box="blue" optionList="Blockchain" />
-        </div>
         <CoinsTable>
-          <TableRow />
-          <TableRow />
-          <TableRow />
+          {coins.map((coin) => {
+            const {
+              coinId,
+              name,
+              ticker,
+              // images,
+              price,
+              marketCap,
+              percentageChanges,
+              ath,
+              athPercentage,
+            } = coin;
+            return (
+              <TableRow
+                coinId={coinId}
+                name={name}
+                ticker={ticker}
+                price={price}
+                marketCap={marketCap}
+                percentageChanges={percentageChanges}
+                ath={ath}
+                athPercentage={athPercentage}
+              />
+            );
+          })}
         </CoinsTable>
       </section>
     </main>
