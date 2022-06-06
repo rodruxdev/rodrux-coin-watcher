@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import SearchBar from '@components/SearchBar';
-import { fireEvent, render } from '../middlewares/test-utils';
+import { fireEvent, render } from '../mocks/test-utils';
 
 describe('SearchBar Tests', () => {
   test('it should render content', () => {

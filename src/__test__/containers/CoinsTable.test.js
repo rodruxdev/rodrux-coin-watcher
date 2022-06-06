@@ -5,10 +5,30 @@ import CoinsTable from '@containers/CoinsTable';
 import TableRow from '@components/TableRow';
 
 describe('CoinsTable Tests', () => {
+  const coin = {
+    name: 'Bitcoin',
+    ticker: 'BTC',
+    price: 0.00002452,
+    images: ['/', '/', '/'],
+    percentageChanges: [1234.5, -2.5, 1.7],
+    marketCap: '772,504,060,812',
+    ath: '772,504',
+    athPercentage: 1234.5,
+    coinId: 1,
+  };
   test('renders content', () => {
     const container = render(
       <CoinsTable>
-        <TableRow />
+        <TableRow
+          coinId={coin.coinId}
+          name={coin.name}
+          ticker={coin.ticker}
+          price={coin.price}
+          marketCap={coin.marketCap}
+          percentageChanges={coin.percentageChanges}
+          ath={coin.ath}
+          athPercentage={coin.athPercentage}
+        />
       </CoinsTable>
     );
     container.getByText('#');
@@ -18,14 +38,11 @@ describe('CoinsTable Tests', () => {
     container.getByText('24h');
     container.getByText('7d');
     container.getByText('Mkt Cap');
-    container.getByText('24h Volume');
-    container.getByText('1');
-    container.getByText('BTC');
-    container.getByText('$0.00002452');
-    container.getByText('1234.5%');
-    container.getByText('-2.5%');
-    container.getByText('1.7%');
-    container.getByText('$772,504,060,812');
-    container.getByText('$32,839,886,478');
+    container.getByText('ATH');
+    container.getByText('ATH Change');
+    container.getByText(coin.coinId);
+    container.getByText(coin.name);
+    container.getByText(`$${coin.price}`);
+    container.getByText(`$${coin.ath}`);
   });
 });
