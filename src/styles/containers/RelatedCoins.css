@@ -10,7 +10,20 @@
   margin-top: 15px;
   margin-inline: auto;
   overflow-x: auto;
-  scroll-behavior: smooth;
+}
+
+.related-coins__carrousel-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.related-coins__carrousel-container::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+  border-radius: 8px;
+}
+
+.related-coins__carrousel-container::-webkit-scrollbar-thumb{
+  background-color: var(--scrollbar-thumb);
+  border-radius: 8px;
 }
 
 .related-coins__carrousel {
