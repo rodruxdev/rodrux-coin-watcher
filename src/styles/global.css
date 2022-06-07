@@ -7,6 +7,8 @@
   --primary-border: 2px solid var(--primary);
   --secondary-border: 2px solid var(--secondary);
   --dark-border: 2px solid var(--dark);
+  --scrollbar-track: #1E324250;
+  --scrollbar-thumb: #060B10CC;
 }
 
 *,
@@ -146,6 +148,8 @@ select {
     --background: #1E3242;
     --dark: #E9E6E9;
     --black: #E9E6E9;
+    --scrollbar-track: #060B10CC;
+    --scrollbar-thumb: #E9E6E9CC;
   }
   .blue-box {
     color: var(--dark);

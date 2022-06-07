@@ -53,6 +53,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
+    column-gap: 20px;
   }
   .coin-info__container {
     width: 100%;
