@@ -1,7 +1,7 @@
 import React from 'react';
 import '@styles/components/ExchangeSelector.css';
 
-function ExchangeSelector() {
+function ExchangeSelector({ options }) {
   return (
     <select
       name="exchange"
@@ -9,7 +9,11 @@ function ExchangeSelector() {
       className="exchange blue-box"
       aria-label="exchange selector"
     >
-      <option value="Binance">Binance</option>
+      {options.map((opt) => (
+        <option value={opt} key={`exchange-${opt}`}>
+          {opt}
+        </option>
+      ))}
     </select>
   );
 }

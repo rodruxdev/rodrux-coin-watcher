@@ -16,6 +16,9 @@ import CoinCard from '@containers/CoinCard';
 import '@styles/pages/CoinPage.css';
 
 function CoinPage() {
+  const optionsConvertor = ['BTC', 'ETH', 'BNB'];
+  const exchanges = ['Binance', 'Bitso', 'Otro'];
+  const pairs = ['BTC/USD', 'ETH/USD', 'BNB/USD'];
   return (
     <main className="coin-page">
       <section className="search">
@@ -24,59 +27,66 @@ function CoinPage() {
       <section>
         <div className="coin-info">
           <div>
-            <CoinPrice />
-            <CoinDescription />
+            <CoinPrice title="Bitcoin(BTC)" image="/">
+              $12345.67 USD
+            </CoinPrice>
+            <CoinDescription>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+              odio eos. Eveniet hic fugiat deleniti deserunt optio cum mollitia
+              accusantium quidem, nam libero et, voluptatum praesentium nisi
+              velit obcaecati totam?
+            </CoinDescription>
           </div>
           <div className="coin-info__container">
             <h4>More Information</h4>
-            <CoinMoreInfo />
-            <CoinMoreInfo />
-            <CoinMoreInfo />
+            <CoinMoreInfo title="Market Cap">$772504060</CoinMoreInfo>
+            <CoinMoreInfo title="Market Cap">$772504060</CoinMoreInfo>
+            <CoinMoreInfo title="Market Cap">$772504060</CoinMoreInfo>
           </div>
         </div>
         <div className="flexb">
           <div className="coin-convertor">
             <div className="coin-convertor__container">
-              <CoinSelector />
+              <CoinSelector options={optionsConvertor} />
               <CoinConversion />
             </div>
             <SwitchButton />
             <div className="coin-convertor__container">
-              <CoinSelector />
+              <CoinSelector options={optionsConvertor} />
               <CoinConversion />
             </div>
           </div>
           <div>
             <h4>Exchange Pair</h4>
             <div className="exchanges-container">
-              <ExchangePair>
+              <ExchangePair image="/" exchange="Binance">
                 <div className="exchange-info__container">
-                  <ExchangeSelector />
-                  <PairSelector />
+                  <ExchangeSelector options={exchanges} />
+                  <PairSelector options={pairs} />
                 </div>
                 <div className="exchange-info__container exchange-info__info">
-                  <PairInfo />
-                  <PairInfo />
+                  <PairInfo title="Price">$12345.67</PairInfo>
+                  <PairInfo title="Price">$12345.67</PairInfo>
                 </div>
               </ExchangePair>
-              <ExchangePair>
+              <ExchangePair image="/" exchange="Binance">
                 <div className="exchange-info__container">
-                  <ExchangeSelector />
-                  <PairSelector />
+                  <ExchangeSelector options={exchanges} />
+                  <PairSelector options={pairs} />
                 </div>
                 <div className="exchange-info__container exchange-info__info">
-                  <PairInfo />
-                  <PairInfo />
+                  <PairInfo title="Price">$12345.67</PairInfo>
+                  <PairInfo title="Price">$12345.67</PairInfo>
                 </div>
               </ExchangePair>
-              <ExchangePair>
+              <ExchangePair image="/" exchange="Binance">
                 <div className="exchange-info__container">
-                  <ExchangeSelector />
-                  <PairSelector />
+                  <ExchangeSelector options={exchanges} />
+                  <PairSelector options={pairs} />
                 </div>
                 <div className="exchange-info__container exchange-info__info">
-                  <PairInfo />
-                  <PairInfo />
+                  <PairInfo title="Price">$12345.67</PairInfo>
+                  <PairInfo title="Price">$12345.67</PairInfo>
                 </div>
               </ExchangePair>
             </div>
@@ -85,45 +95,45 @@ function CoinPage() {
       </section>
       <RelatedCoins>
         <CoinCard>
-          <CoinTitle />
+          <CoinTitle title="Bitcoin(BTC)" image="/" />
           <div>
-            <PairInfo />
-            <PairInfo />
+            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">$12345.67</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle />
+          <CoinTitle title="Bitcoin(BTC)" image="/" />
           <div>
-            <PairInfo />
-            <PairInfo />
+            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">$12345.67</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle />
+          <CoinTitle title="Bitcoin(BTC)" image="/" />
           <div>
-            <PairInfo />
-            <PairInfo />
+            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">$12345.67</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle />
+          <CoinTitle title="Bitcoin(BTC)" image="/" />
           <div>
-            <PairInfo />
-            <PairInfo />
+            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">$12345.67</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle />
+          <CoinTitle title="Bitcoin(BTC)" image="/" />
           <div>
-            <PairInfo />
-            <PairInfo />
+            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">$12345.67</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle />
+          <CoinTitle title="Bitcoin(BTC)" image="/" />
           <div>
-            <PairInfo />
-            <PairInfo />
+            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">$12345.67</PairInfo>
           </div>
         </CoinCard>
       </RelatedCoins>

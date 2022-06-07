@@ -6,7 +6,7 @@ import CoinDescription from '@components/CoinDescription';
 describe('CoinDescription Tests', () => {
   const description = 'Lorem';
   test('renders content', () => {
-    const component = render(<CoinDescription>${description}</CoinDescription>);
+    const component = render(<CoinDescription>{description}</CoinDescription>);
     component.getByText('Description');
     component.getByText(description);
   });

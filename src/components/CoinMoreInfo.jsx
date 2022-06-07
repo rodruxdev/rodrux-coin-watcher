@@ -1,11 +1,11 @@
 import React from 'react';
 import '@styles/components/CoinMoreInfo.css';
 
-function CoinMoreInfo() {
+function CoinMoreInfo({ title, children }) {
   return (
     <div className="info">
-      <p>Market Cap</p>
-      <p>$772,504,060,812</p>
+      <p>{title}</p>
+      <p>{children}</p>
     </div>
   );
 }

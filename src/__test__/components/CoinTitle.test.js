@@ -6,18 +6,14 @@ import CoinTitle from '@components/CoinTitle';
 describe('CoinTitle Tests', () => {
   test('renders content', () => {
     const props = {
-      coinName: 'Ethereum',
-      ticker: 'ETH',
+      title: 'Ethereum(ETH)',
       imageURL: '/',
     };
     const component = render(
-      <CoinTitle
-        name={props.coinName}
-        ticker={props.ticker}
-        image={props.imageURL}
-      />
+      <CoinTitle title={props.title} image={props.imageURL} />
     );
-    const image = component.getByAltText(`${props.coinName} logo`);
+    component.getByText(props.title);
+    const image = component.getByAltText(`${props.title} logo`);
     fireEvent.load(image);
   });
 });
