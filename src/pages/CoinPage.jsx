@@ -22,9 +22,11 @@ function CoinPage() {
         <SearchBar />
       </section>
       <section>
-        <CoinPrice />
         <div className="coin-info">
-          <CoinDescription />
+          <div>
+            <CoinPrice />
+            <CoinDescription />
+          </div>
           <div className="coin-info__container">
             <h4>More Information</h4>
             <CoinMoreInfo />
