@@ -38,6 +38,7 @@ function Home() {
                 percentageChanges={percentageChanges}
                 ath={ath}
                 athPercentage={athPercentage}
+                key={`coin-${coinId}`}
               />
             );
           })}
