@@ -2,7 +2,7 @@ import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import '@styles/components/CoinSelector.css';
 
-function CoinSelector() {
+function CoinSelector({ options }) {
   return (
     <div className="coin-selector">
       <label htmlFor="coin" className="coin-selector__icon-container">
@@ -14,7 +14,11 @@ function CoinSelector() {
         className="coin-selector__selector"
         aria-label="coin"
       >
-        <option value="BTC">BTC</option>
+        {options.map((opt) => (
+          <option value={opt} key={`coin-${opt}`}>
+            {opt}
+          </option>
+        ))}
       </select>
     </div>
   );

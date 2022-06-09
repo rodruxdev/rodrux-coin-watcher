@@ -1,11 +1,11 @@
 import React from 'react';
 import '@styles/components/PairInfo.css';
 
-function PairInfo() {
+function PairInfo({ title, children }) {
   return (
     <div className="pair-info">
-      <p className="pair-info__title">Price(USD)</p>
-      <p className="pair-info__info">$0.00002452</p>
+      <p className="pair-info__title">{title}</p>
+      <p className="pair-info__info">{children}</p>
     </div>
   );
 }

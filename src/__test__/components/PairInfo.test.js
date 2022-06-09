@@ -4,9 +4,15 @@ import { render } from '@testing-library/react';
 import PairInfo from '@components/PairInfo';
 
 describe('PairInfo Tests', () => {
+  const props = {
+    title: 'Market Cap',
+    value: '$14523.53',
+  };
   test('renders content', () => {
-    const component = render(<PairInfo />);
-    component.getByText('Price(USD)');
-    component.getByText('$0.00002452');
+    const component = render(
+      <PairInfo title={props.title}>{props.value}</PairInfo>
+    );
+    component.getByText(props.title);
+    component.getByText(props.value);
   });
 });

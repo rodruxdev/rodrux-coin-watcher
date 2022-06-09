@@ -1,11 +1,11 @@
 import React from 'react';
 import '@styles/containers/ExchangePair.css';
 
-function ExchangePair({ children }) {
+function ExchangePair({ image, exchange, children }) {
   return (
     <div className="exchange-info">
       <div className="exchange-info__image">
-        <img src="/" alt="Exchange Logo" />
+        <img src={image} alt={`${exchange} logo`} />
       </div>
       {children}
     </div>
