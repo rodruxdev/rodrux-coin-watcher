@@ -20,6 +20,7 @@ module.exports = {
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@routes': path.resolve(__dirname, 'src/routes'),
       '@slices': path.resolve(__dirname, 'src/slices'),
+      '@reducers': path.resolve(__dirname, 'src/reducers'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
     },
   },
