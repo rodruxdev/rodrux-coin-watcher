@@ -18,14 +18,25 @@ import { useSelector } from 'react-redux';
 
 function CoinPage() {
   const coinInfo = useSelector((state) => state.coin);
-  const convertorInfo = useSelector((state) => state.convertor);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
+  const convertorInfo = useSelector((state) => state.convertor);
   const optionsConvertor = convertorInfo.conversionOptions.map(
     (option) => option.coin
   );
   const mainCoin = [convertorInfo.coin];
-  const exchanges = ['Binance', 'Bitso', 'Otro'];
-  const pairs = ['BTC/USD', 'ETH/USD', 'BNB/USD'];
+  // Exchanges info and options
+  const exchangesInfo = useSelector((state) => state.exchanges);
+  const exchanges = exchangesInfo.exchangeOptions.map(
+    (exchangeInfo) => exchangeInfo.exchange
+  );
+  const pairsData = exchangesInfo.actualInfo.map((exchangeSelected) => {
+    const exchangeIndex = exchanges.findIndex(
+      (exchange) => exchange === exchangeSelected.exchange
+    );
+    return exchangesInfo.exchangeOptions[exchangeIndex].pairs;
+  });
+  // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
+  const pairs = pairsData[0].map((pairData) => pairData.pair);
   return (
     <main className="coin-page">
       <section className="search">
@@ -97,8 +108,12 @@ function CoinPage() {
                   <PairSelector options={pairs} />
                 </div>
                 <div className="exchange-info__container exchange-info__info">
-                  <PairInfo title="Price">$12345.67</PairInfo>
-                  <PairInfo title="Price">$12345.67</PairInfo>
+                  <PairInfo title="Price">
+                    {exchangesInfo?.actualInfo[0]?.data?.price}
+                  </PairInfo>
+                  <PairInfo title="Volume">
+                    {exchangesInfo?.actualInfo[0]?.data?.volume}
+                  </PairInfo>
                 </div>
               </ExchangePair>
               <ExchangePair image="/" exchange="Binance">
@@ -107,8 +122,12 @@ function CoinPage() {
                   <PairSelector options={pairs} />
                 </div>
                 <div className="exchange-info__container exchange-info__info">
-                  <PairInfo title="Price">$12345.67</PairInfo>
-                  <PairInfo title="Price">$12345.67</PairInfo>
+                  <PairInfo title="Price">
+                    {exchangesInfo?.actualInfo[0]?.data?.price}
+                  </PairInfo>
+                  <PairInfo title="Volume">
+                    {exchangesInfo?.actualInfo[0]?.data?.volume}
+                  </PairInfo>
                 </div>
               </ExchangePair>
               <ExchangePair image="/" exchange="Binance">
@@ -117,8 +136,12 @@ function CoinPage() {
                   <PairSelector options={pairs} />
                 </div>
                 <div className="exchange-info__container exchange-info__info">
-                  <PairInfo title="Price">$12345.67</PairInfo>
-                  <PairInfo title="Price">$12345.67</PairInfo>
+                  <PairInfo title="Price">
+                    {exchangesInfo?.actualInfo[0]?.data?.price}
+                  </PairInfo>
+                  <PairInfo title="Volume">
+                    {exchangesInfo?.actualInfo[0]?.data?.volume}
+                  </PairInfo>
                 </div>
               </ExchangePair>
             </div>
@@ -133,7 +156,7 @@ function CoinPage() {
           />
           <div>
             <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
@@ -143,7 +166,7 @@ function CoinPage() {
           />
           <div>
             <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
@@ -153,7 +176,7 @@ function CoinPage() {
           />
           <div>
             <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
@@ -163,7 +186,7 @@ function CoinPage() {
           />
           <div>
             <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
@@ -173,7 +196,7 @@ function CoinPage() {
           />
           <div>
             <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
@@ -183,7 +206,7 @@ function CoinPage() {
           />
           <div>
             <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
           </div>
         </CoinCard>
       </RelatedCoins>
