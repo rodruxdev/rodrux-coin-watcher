@@ -17,10 +17,9 @@ import '@styles/pages/CoinPage.css';
 import { useSelector } from 'react-redux';
 
 function CoinPage() {
-  // TODO Add states in Coin Page and add a exchanges slice
   const coinInfo = useSelector((state) => state.coin);
   const convertorInfo = useSelector((state) => state.convertor);
-  // const relatedCoins = useSelector((state) => state.relatedCoins.coins);
+  const relatedCoins = useSelector((state) => state.relatedCoins.coins);
   const optionsConvertor = convertorInfo.conversionOptions.map(
     (option) => option.coin
   );
@@ -128,45 +127,63 @@ function CoinPage() {
       </section>
       <RelatedCoins>
         <CoinCard>
-          <CoinTitle title="Bitcoin(BTC)" image="/" />
+          <CoinTitle
+            title={relatedCoins[0].title}
+            image={relatedCoins[0].image}
+          />
           <div>
-            <PairInfo title="Price">$12345.67</PairInfo>
-            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
+            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle title="Bitcoin(BTC)" image="/" />
+          <CoinTitle
+            title={relatedCoins[0].title}
+            image={relatedCoins[0].image}
+          />
           <div>
-            <PairInfo title="Price">$12345.67</PairInfo>
-            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
+            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle title="Bitcoin(BTC)" image="/" />
+          <CoinTitle
+            title={relatedCoins[0].title}
+            image={relatedCoins[0].image}
+          />
           <div>
-            <PairInfo title="Price">$12345.67</PairInfo>
-            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
+            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle title="Bitcoin(BTC)" image="/" />
+          <CoinTitle
+            title={relatedCoins[0].title}
+            image={relatedCoins[0].image}
+          />
           <div>
-            <PairInfo title="Price">$12345.67</PairInfo>
-            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
+            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle title="Bitcoin(BTC)" image="/" />
+          <CoinTitle
+            title={relatedCoins[0].title}
+            image={relatedCoins[0].image}
+          />
           <div>
-            <PairInfo title="Price">$12345.67</PairInfo>
-            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
+            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
-          <CoinTitle title="Bitcoin(BTC)" image="/" />
+          <CoinTitle
+            title={relatedCoins[0].title}
+            image={relatedCoins[0].image}
+          />
           <div>
-            <PairInfo title="Price">$12345.67</PairInfo>
-            <PairInfo title="Price">$12345.67</PairInfo>
+            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
+            <PairInfo title="Volume">{relatedCoins[0].volume}</PairInfo>
           </div>
         </CoinCard>
       </RelatedCoins>

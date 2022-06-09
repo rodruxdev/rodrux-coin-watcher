@@ -5,7 +5,7 @@ const initialState = {
     {
       title: 'Bitcoin(BTC)',
       price: '$12345.67',
-      marketCap: '$12345,67',
+      volume: '$12345,67',
       image: '/',
     },
   ],
