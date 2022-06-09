@@ -1,4 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+/* eslint-disable no-use-before-define */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import getCoins from '../api/getCoins';
 
 const initialState = {
   coins: [
@@ -16,21 +18,35 @@ const initialState = {
   ],
 };
 
+export const fetchCoins = createAsyncThunk(
+  'table/fetchCoins',
+  async (_, { dispatch }) => {
+    try {
+      const response = await getCoins();
+      const coinsList = response;
+      console.log(coinsList);
+      // dispatch(setCoins(coinsList));
+    } catch (err) {
+      console.log(err, 'Error on fetching coins');
+    }
+  }
+);
+
 const tableSlice = createSlice({
   name: 'table',
   initialState,
   reducers: {
+    setCoins: (state, action) => {
+      state.coins = action.payload;
+    },
     updateCoins: (state, action) => {
-      state.coins = state.coins.map((coin) => ({
-        ...coin,
-        name: action.payload,
-      }));
+      state.coins[0].name = action.payload;
     },
   },
 });
 
-const { updateCoins } = tableSlice.actions;
+const { setCoins, updateCoins } = tableSlice.actions;
 
-export { updateCoins };
+export { setCoins, updateCoins };
 
 export default tableSlice.reducer;
