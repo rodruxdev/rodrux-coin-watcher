@@ -1,31 +1,20 @@
 /* eslint-disable no-use-before-define */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import getCoins from '../api/getCoins';
+import createCoinsList from '../lib/createCoinsList';
 
 const initialState = {
-  coins: [
-    {
-      name: 'Bitcoin',
-      ticker: 'BTC',
-      price: 0.00002452,
-      images: ['/', '/', '/'],
-      percentageChanges: [1234.5, -2.5, 1.7],
-      marketCap: '772,504,060,812',
-      ath: '772,504',
-      athPercentage: 1234.5,
-      coinId: 1,
-    },
-  ],
+  coins: [],
 };
 
 export const fetchCoins = createAsyncThunk(
   'table/fetchCoins',
   async (_, { dispatch }) => {
     try {
-      const response = await getCoins();
-      const coinsList = response;
-      console.log(coinsList);
-      // dispatch(setCoins(coinsList));
+      const limit = 20;
+      const response = await getCoins(limit);
+      const coinsList = createCoinsList(response);
+      dispatch(setCoins(coinsList));
     } catch (err) {
       console.log(err, 'Error on fetching coins');
     }
