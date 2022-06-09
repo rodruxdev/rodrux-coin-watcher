@@ -26,15 +26,15 @@ const initialState = {
     },
     coinQuantity: '$12345.67',
   },
-  exchangesInfo: {
-    Binance: [
-      {
-        pair: 'BTC/USDT',
-        price: '$12345.67',
-        marketCap: '$1234567.89',
-      },
-    ],
-  },
+  // exchangesInfo: {
+  //   Binance: [
+  //     {
+  //       pair: 'BTC/USDT',
+  //       price: '$12345.67',
+  //       marketCap: '$1234567.89',
+  //     },
+  //   ],
+  // },
 };
 
 const coinSlice = createSlice({

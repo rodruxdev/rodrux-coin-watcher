@@ -14,9 +14,17 @@ import RelatedCoins from '@containers/RelatedCoins';
 import CoinTitle from '@components/CoinTitle';
 import CoinCard from '@containers/CoinCard';
 import '@styles/pages/CoinPage.css';
+import { useSelector } from 'react-redux';
 
 function CoinPage() {
-  const optionsConvertor = ['BTC', 'ETH', 'BNB'];
+  // TODO Add states in Coin Page and add a exchanges slice
+  const coinInfo = useSelector((state) => state.coin);
+  const convertorInfo = useSelector((state) => state.convertor);
+  // const relatedCoins = useSelector((state) => state.relatedCoins.coins);
+  const optionsConvertor = convertorInfo.conversionOptions.map(
+    (option) => option.coin
+  );
+  const mainCoin = [convertorInfo.coin];
   const exchanges = ['Binance', 'Bitso', 'Otro'];
   const pairs = ['BTC/USD', 'ETH/USD', 'BNB/USD'];
   return (
@@ -27,27 +35,52 @@ function CoinPage() {
       <section>
         <div className="coin-info">
           <div>
-            <CoinPrice title="Bitcoin(BTC)" image="/">
-              $12345.67 USD
+            <CoinPrice title={coinInfo.title} image={coinInfo.image}>
+              {coinInfo.priceTitle}
             </CoinPrice>
-            <CoinDescription>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-              odio eos. Eveniet hic fugiat deleniti deserunt optio cum mollitia
-              accusantium quidem, nam libero et, voluptatum praesentium nisi
-              velit obcaecati totam?
-            </CoinDescription>
+            <CoinDescription>{coinInfo.description}</CoinDescription>
           </div>
           <div className="coin-info__container">
             <h4>More Information</h4>
-            <CoinMoreInfo title="Market Cap">$772504060</CoinMoreInfo>
-            <CoinMoreInfo title="Market Cap">$772504060</CoinMoreInfo>
-            <CoinMoreInfo title="Market Cap">$772504060</CoinMoreInfo>
+            <CoinMoreInfo title="ROI">{coinInfo.moreInfo.roi}</CoinMoreInfo>
+            <CoinMoreInfo title="ATH">{coinInfo.moreInfo.ath}</CoinMoreInfo>
+            <CoinMoreInfo title="ATL">{coinInfo.moreInfo.atl}</CoinMoreInfo>
+            <CoinMoreInfo title="ATH Percentage Change">
+              {coinInfo.moreInfo.athPercentage}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="ATL Percentage Change">
+              {coinInfo.moreInfo.atlPercentage}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="Market Capitalization">
+              {coinInfo.moreInfo.marketCap}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="Volume">
+              {coinInfo.moreInfo.volume}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="24h High">
+              {coinInfo.moreInfo.highDay}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="24h Low">
+              {coinInfo.moreInfo.lowDay}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="1h Percentage Change">
+              {coinInfo.moreInfo.priceChange.hour}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="24h Percentage Change">
+              {coinInfo.moreInfo.priceChange.day}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="7h Percentage Change">
+              {coinInfo.moreInfo.priceChange.week}
+            </CoinMoreInfo>
+            <CoinMoreInfo title="Coin Quantity">
+              {coinInfo.moreInfo.coinQuantity}
+            </CoinMoreInfo>
           </div>
         </div>
         <div className="flexb">
           <div className="coin-convertor">
             <div className="coin-convertor__container">
-              <CoinSelector options={optionsConvertor} />
+              <CoinSelector options={mainCoin} />
               <CoinConversion />
             </div>
             <SwitchButton />
