@@ -19,7 +19,7 @@ import { fetchCoin } from '../slices/coinSlice';
 
 function CoinPage() {
   const dispatch = useDispatch();
-  const coinInfo = useSelector((state) => state.coin);
+  const coinInfo = useSelector((state) => state.coin.coinInfo);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
   const convertorInfo = useSelector((state) => state.convertor);
   const optionsConvertor = convertorInfo.conversionOptions.map(
@@ -41,7 +41,7 @@ function CoinPage() {
   const pairs = pairsData[0].map((pairData) => pairData.pair);
 
   useEffect(() => {
-    dispatch(fetchCoin('bitcoin'));
+    dispatch(fetchCoin('ethereum'));
   }, []);
   return (
     <main className="coin-page">
@@ -80,13 +80,13 @@ function CoinPage() {
               {coinInfo.moreInfo.lowDay}
             </CoinMoreInfo>
             <CoinMoreInfo title="1h Percentage Change">
-              {coinInfo.moreInfo.priceChange.hour}
+              {coinInfo.moreInfo.priceChange[0]}
             </CoinMoreInfo>
             <CoinMoreInfo title="24h Percentage Change">
-              {coinInfo.moreInfo.priceChange.day}
+              {coinInfo.moreInfo.priceChange[1]}
             </CoinMoreInfo>
             <CoinMoreInfo title="7h Percentage Change">
-              {coinInfo.moreInfo.priceChange.week}
+              {coinInfo.moreInfo.priceChange[2]}
             </CoinMoreInfo>
             <CoinMoreInfo title="Coin Quantity">
               {coinInfo.moreInfo.coinQuantity}
