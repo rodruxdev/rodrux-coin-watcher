@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SearchBar from '@components/SearchBar';
 import CoinPrice from '@components/CoinPrice';
 import CoinDescription from '@components/CoinDescription';
@@ -14,9 +14,11 @@ import RelatedCoins from '@containers/RelatedCoins';
 import CoinTitle from '@components/CoinTitle';
 import CoinCard from '@containers/CoinCard';
 import '@styles/pages/CoinPage.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCoin } from '../slices/coinSlice';
 
 function CoinPage() {
+  const dispatch = useDispatch();
   const coinInfo = useSelector((state) => state.coin);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
   const convertorInfo = useSelector((state) => state.convertor);
@@ -37,6 +39,10 @@ function CoinPage() {
   });
   // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
   const pairs = pairsData[0].map((pairData) => pairData.pair);
+
+  useEffect(() => {
+    dispatch(fetchCoin('bitcoin'));
+  }, []);
   return (
     <main className="coin-page">
       <section className="search">

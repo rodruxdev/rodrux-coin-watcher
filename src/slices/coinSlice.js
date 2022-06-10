@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import getCoin from '@api/getCoin';
 
 const initialState = {
   name: 'Bitcoin',
@@ -26,29 +27,32 @@ const initialState = {
     },
     coinQuantity: '$12345.67',
   },
-  exchangesInfo: {
-    Binance: [
-      {
-        pair: 'BTC/USDT',
-        price: '$12345.67',
-        marketCap: '$1234567.89',
-      },
-    ],
-  },
 };
+
+export const fetchCoin = createAsyncThunk(
+  'coin/fetchCoin',
+  async (id, { dispatch }) => {
+    try {
+      const response = await getCoin(id);
+      console.log(response);
+    } catch (err) {
+      console.log(err, 'Error on fetching coin');
+    }
+  }
+);
 
 const coinSlice = createSlice({
   name: 'coin',
   initialState,
   reducers: {
-    updateCoin: (state, action) => {
+    setCoin: (state, action) => {
       state.name = action.payload;
     },
   },
 });
 
-const { updateCoin } = coinSlice.actions;
+const { setCoin } = coinSlice.actions;
 
-export { updateCoin };
+export { setCoin };
 
 export default coinSlice.reducer;
