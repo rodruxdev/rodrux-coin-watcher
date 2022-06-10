@@ -24,6 +24,7 @@ module.exports = {
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@services': path.resolve(__dirname, 'src/services'),
       '@api': path.resolve(__dirname, 'src/api'),
+      '@lib': path.resolve(__dirname, 'src/lib'),
     },
   },
   module: {

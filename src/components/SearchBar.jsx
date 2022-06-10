@@ -2,18 +2,18 @@ import React from 'react';
 import { MdSearch, MdClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import '@styles/components/SearchBar.css';
-import { updateSearch } from '@slices/uiSlice';
-import { updateCoins } from '@slices/tableSlice';
+import { setSearch } from '@slices/uiSlice';
+import { fetchSearchCoins } from '@slices/tableSlice';
 
 function SearchBar() {
-  const [search, setSearch] = React.useState('');
+  const [searchInput, setSearchInput] = React.useState('');
   const dispatch = useDispatch();
 
   const handleSearch = (event) => {
     if (event?.key === 'Enter') {
-      if (search !== '') {
-        dispatch(updateSearch(search));
-        dispatch(updateCoins(search));
+      if (searchInput !== '') {
+        dispatch(setSearch(searchInput));
+        dispatch(fetchSearchCoins(searchInput));
       }
     }
   };
@@ -24,12 +24,12 @@ function SearchBar() {
     while (value.match(reg)) {
       value = value.replace(reg, '');
     }
-    setSearch(value);
+    setSearchInput(value);
   };
 
   const onClean = () => {
-    if (search !== '') {
-      setSearch('');
+    if (searchInput !== '') {
+      setSearchInput('');
     }
   };
 
@@ -41,12 +41,12 @@ function SearchBar() {
         placeholder="Bitcoin"
         className="search-bar__input"
         aria-label="search"
-        value={search}
+        value={searchInput}
         onChange={onSearchChange}
         onKeyDown={handleSearch}
       />
       <label htmlFor="searchbar" className="search-bar__logo-container">
-        {search !== '' ? (
+        {searchInput !== '' ? (
           <button
             onClick={onClean}
             type="button"

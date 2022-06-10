@@ -1,7 +1,8 @@
 /* eslint-disable no-use-before-define */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import getCoins from '../api/getCoins';
-import createCoinsList from '../lib/createCoinsList';
+import getCoins from '@api/getCoins';
+import searchCoins from '@api/searchCoins';
+import createCoinsList from '@lib/createCoinsList';
 
 const initialState = {
   coins: [],
@@ -15,6 +16,18 @@ export const fetchCoins = createAsyncThunk(
       const response = await getCoins(limit);
       const coinsList = createCoinsList(response);
       dispatch(setCoins(coinsList));
+    } catch (err) {
+      console.log(err, 'Error on fetching coins');
+    }
+  }
+);
+
+export const fetchSearchCoins = createAsyncThunk(
+  'table/fetchSearchCoins',
+  async (search, { dispatch }) => {
+    try {
+      const response = await searchCoins(search);
+      console.log(response);
     } catch (err) {
       console.log(err, 'Error on fetching coins');
     }
