@@ -15,12 +15,15 @@ class CoinTable {
     this.ticker = ticker;
     this.price = price;
     this.images = images;
-    this.percentageChanges = percentageChanges.map((item) =>
-      item.toLocaleString('en-US', {
-        maximumFractionDigits: 2,
-        minimumFractionDigits: 2,
-      })
-    );
+    this.percentageChanges = percentageChanges.map((item) => {
+      if (item) {
+        return item.toLocaleString('en-US', {
+          maximumFractionDigits: 2,
+          minimumFractionDigits: 2,
+        });
+      }
+      return '---';
+    });
     this.marketCap = marketCap;
     this.ath = ath;
     this.athPercentage = athPercentage;

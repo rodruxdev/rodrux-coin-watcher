@@ -9,15 +9,11 @@ import { fetchCoins } from '../slices/tableSlice';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);
-  const search = useSelector((state) => state.ui.searchInput);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (search) {
-      console.log(search);
-    }
     dispatch(fetchCoins());
-  }, [search]);
+  }, []);
   return (
     <main className="home">
       <section>
