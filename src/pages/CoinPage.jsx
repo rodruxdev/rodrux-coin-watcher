@@ -21,8 +21,8 @@ function CoinPage() {
   const dispatch = useDispatch();
   const coinInfo = useSelector((state) => state.coin.coinInfo);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
-  const convertorInfo = useSelector((state) => state.convertor);
-  const optionsConvertor = convertorInfo.conversionOptions.map(
+  const convertorInfo = useSelector((state) => state.convertor.coinConversion);
+  const optionsConvertor = convertorInfo?.conversionOptions?.map(
     (option) => option.coin
   );
   const mainCoin = [convertorInfo.coin];
@@ -58,38 +58,38 @@ function CoinPage() {
           </div>
           <div className="coin-info__container">
             <h4>More Information</h4>
-            <CoinMoreInfo title="ROI">{coinInfo.moreInfo.roi}</CoinMoreInfo>
-            <CoinMoreInfo title="ATH">{coinInfo.moreInfo.ath}</CoinMoreInfo>
-            <CoinMoreInfo title="ATL">{coinInfo.moreInfo.atl}</CoinMoreInfo>
+            <CoinMoreInfo title="ROI">{coinInfo.moreInfo?.roi}</CoinMoreInfo>
+            <CoinMoreInfo title="ATH">{coinInfo.moreInfo?.ath}</CoinMoreInfo>
+            <CoinMoreInfo title="ATL">{coinInfo.moreInfo?.atl}</CoinMoreInfo>
             <CoinMoreInfo title="ATH Percentage Change">
-              {coinInfo.moreInfo.athPercentage}
+              {coinInfo.moreInfo?.athPercentage}
             </CoinMoreInfo>
             <CoinMoreInfo title="ATL Percentage Change">
-              {coinInfo.moreInfo.atlPercentage}
+              {coinInfo.moreInfo?.atlPercentage}
             </CoinMoreInfo>
             <CoinMoreInfo title="Market Capitalization">
-              {coinInfo.moreInfo.marketCap}
+              {coinInfo.moreInfo?.marketCap}
             </CoinMoreInfo>
             <CoinMoreInfo title="Volume">
-              {coinInfo.moreInfo.volume}
+              {coinInfo.moreInfo?.volume}
             </CoinMoreInfo>
             <CoinMoreInfo title="24h High">
-              {coinInfo.moreInfo.highDay}
+              {coinInfo.moreInfo?.highDay}
             </CoinMoreInfo>
             <CoinMoreInfo title="24h Low">
-              {coinInfo.moreInfo.lowDay}
+              {coinInfo.moreInfo?.lowDay}
             </CoinMoreInfo>
             <CoinMoreInfo title="1h Percentage Change">
-              {coinInfo.moreInfo.priceChange[0]}
+              {coinInfo.moreInfo?.priceChange[0]}
             </CoinMoreInfo>
             <CoinMoreInfo title="24h Percentage Change">
-              {coinInfo.moreInfo.priceChange[1]}
+              {coinInfo.moreInfo?.priceChange[1]}
             </CoinMoreInfo>
             <CoinMoreInfo title="7h Percentage Change">
-              {coinInfo.moreInfo.priceChange[2]}
+              {coinInfo.moreInfo?.priceChange[2]}
             </CoinMoreInfo>
             <CoinMoreInfo title="Coin Quantity">
-              {coinInfo.moreInfo.coinQuantity}
+              {coinInfo.moreInfo?.coinQuantity}
             </CoinMoreInfo>
           </div>
         </div>
@@ -101,7 +101,7 @@ function CoinPage() {
             </div>
             <SwitchButton />
             <div className="coin-convertor__container">
-              <CoinSelector options={optionsConvertor} />
+              <CoinSelector options={optionsConvertor || []} />
               <CoinConversion />
             </div>
           </div>
