@@ -14,7 +14,7 @@ export const fetchCoins = createAsyncThunk(
   async (searchIds, { dispatch }) => {
     try {
       const limit = 20;
-      const response = await getCoins(limit, searchIds);
+      const response = await getCoins(limit, { searchIds });
       const coinsList = createCoinsList(response);
       dispatch(setCoins(coinsList));
     } catch (err) {

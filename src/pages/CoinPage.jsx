@@ -156,62 +156,62 @@ function CoinPage() {
       <RelatedCoins>
         <CoinCard>
           <CoinTitle
-            title={relatedCoins[0].title}
-            image={relatedCoins[0].image}
+            title={relatedCoins[0]?.title}
+            image={relatedCoins[0]?.image}
           />
           <div>
-            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
+            <PairInfo title="Price">{relatedCoins[0]?.price}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[0]?.marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
           <CoinTitle
-            title={relatedCoins[0].title}
-            image={relatedCoins[0].image}
+            title={relatedCoins[1]?.title}
+            image={relatedCoins[1]?.image}
           />
           <div>
-            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
+            <PairInfo title="Price">{relatedCoins[1]?.price}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[1]?.marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
           <CoinTitle
-            title={relatedCoins[0].title}
-            image={relatedCoins[0].image}
+            title={relatedCoins[2]?.title}
+            image={relatedCoins[2]?.image}
           />
           <div>
-            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
+            <PairInfo title="Price">{relatedCoins[2]?.price}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[2]?.marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
           <CoinTitle
-            title={relatedCoins[0].title}
-            image={relatedCoins[0].image}
+            title={relatedCoins[3]?.title}
+            image={relatedCoins[3]?.image}
           />
           <div>
-            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
+            <PairInfo title="Price">{relatedCoins[3]?.price}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[3]?.marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
           <CoinTitle
-            title={relatedCoins[0].title}
-            image={relatedCoins[0].image}
+            title={relatedCoins[4]?.title}
+            image={relatedCoins[4]?.image}
           />
           <div>
-            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
+            <PairInfo title="Price">{relatedCoins[4]?.price}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[4]?.marketCap}</PairInfo>
           </div>
         </CoinCard>
         <CoinCard>
           <CoinTitle
-            title={relatedCoins[0].title}
-            image={relatedCoins[0].image}
+            title={relatedCoins[5]?.title}
+            image={relatedCoins[5]?.image}
           />
           <div>
-            <PairInfo title="Price">{relatedCoins[0].price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[0].marketCap}</PairInfo>
+            <PairInfo title="Price">{relatedCoins[5]?.price}</PairInfo>
+            <PairInfo title="Market Cap">{relatedCoins[5]?.marketCap}</PairInfo>
           </div>
         </CoinCard>
       </RelatedCoins>
