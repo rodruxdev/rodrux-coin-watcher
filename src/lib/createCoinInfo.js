@@ -1,5 +1,3 @@
-import CoinInfo from './CoinInfo';
-
 const createCoinInfo = (response) => {
   const coinId = response?.id;
   const name = response?.name;
@@ -7,6 +5,7 @@ const createCoinInfo = (response) => {
   const price = response?.market_data?.current_price?.usd;
   const image = response?.image?.thumb;
   const description = response?.description?.en;
+  const categories = response?.categories;
   const roi = response?.market_data?.roi?.percentage;
   const ath = response?.market_data?.ath?.usd;
   const atl = response?.market_data?.atl?.usd;
@@ -52,16 +51,19 @@ const createCoinInfo = (response) => {
     }),
     coinQuantity,
   };
-  const coinInfo = new CoinInfo(
+  const coinInfo = {
     coinId,
     name,
+    categories,
     ticker,
     price,
     image,
     description,
-    moreInfo
-  );
-  return { ...coinInfo };
+    moreInfo,
+    title: name + ticker,
+    priceTitle: `$${price} USD`,
+  };
+  return coinInfo;
 };
 
 export default createCoinInfo;
