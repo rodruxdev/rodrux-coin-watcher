@@ -30,14 +30,15 @@ function CoinPage() {
   const exchangesInfo = useSelector((state) => state.exchanges);
   const optionsKeys = Object.keys(exchangesInfo.exchangeOptions);
   const exchanges = optionsKeys.map(
-    (key) => exchangesInfo.exchangeOptions[key].exchange
+    (key) => exchangesInfo.exchangeOptions[key]?.exchange
   );
   const pairsData = exchangesInfo.actualInfo.map((exchangeSelected) => {
     const key = exchangeSelected.exchangeId;
-    return exchangesInfo.exchangeOptions[key].pairs;
+    return exchangesInfo.exchangeOptions[key]?.pairs;
   });
   // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
-  const pairs = pairsData[0].map((pairData) => pairData.pair);
+  // TODO: Change the logic to get an array with three arrays to show separately the pairs options.
+  const pairs = pairsData[0]?.map((pairData) => pairData?.pair) ?? ['BUSD/BTC'];
   useEffect(() => {
     dispatch(fetchCoin('ethereum'));
   }, []);
@@ -127,10 +128,10 @@ function CoinPage() {
                 </div>
                 <div className="exchange-info__container exchange-info__info">
                   <PairInfo title="Price">
-                    {exchangesInfo?.actualInfo[0]?.data?.price}
+                    {exchangesInfo?.actualInfo[1]?.data?.price}
                   </PairInfo>
                   <PairInfo title="Volume">
-                    {exchangesInfo?.actualInfo[0]?.data?.volume}
+                    {exchangesInfo?.actualInfo[1]?.data?.volume}
                   </PairInfo>
                 </div>
               </ExchangePair>
@@ -141,10 +142,10 @@ function CoinPage() {
                 </div>
                 <div className="exchange-info__container exchange-info__info">
                   <PairInfo title="Price">
-                    {exchangesInfo?.actualInfo[0]?.data?.price}
+                    {exchangesInfo?.actualInfo[2]?.data?.price}
                   </PairInfo>
                   <PairInfo title="Volume">
-                    {exchangesInfo?.actualInfo[0]?.data?.volume}
+                    {exchangesInfo?.actualInfo[2]?.data?.volume}
                   </PairInfo>
                 </div>
               </ExchangePair>

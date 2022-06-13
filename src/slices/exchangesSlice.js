@@ -9,26 +9,20 @@ const initialState = {
       pair: 'BTC/USD',
       data: { price: '$12345.67', volume: '$12345.67' },
     },
-  ],
-  exchangeOptions: {
-    binance: {
+    {
+      exchangeId: 'binance',
       exchange: 'Binance',
-      pairs: [
-        {
-          pair: 'BTC/USD',
-          data: { price: '$12345.67', volume: '$12345.67' },
-        },
-        {
-          pair: 'BTC/USDT',
-          data: { price: '$12345.67', volume: '$12345.67' },
-        },
-        {
-          pair: 'BTC/USDC',
-          data: { price: '$12345.67', volume: '$12345.67' },
-        },
-      ],
+      pair: 'BTC/USD',
+      data: { price: '$12345.6', volume: '$12345.6' },
     },
-  },
+    {
+      exchangeId: 'binance',
+      exchange: 'Binance',
+      pair: 'BTC/USD',
+      data: { price: '$12345', volume: '$12345' },
+    },
+  ],
+  exchangeOptions: {},
 };
 
 const exchangesSlice = createSlice({
