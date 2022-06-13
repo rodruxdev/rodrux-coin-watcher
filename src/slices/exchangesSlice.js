@@ -1,15 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
+import createExchangeOptions from '../lib/createExchangeOptions';
 
 const initialState = {
   actualInfo: [
     {
+      exchangeId: 'binance',
       exchange: 'Binance',
       pair: 'BTC/USD',
       data: { price: '$12345.67', volume: '$12345.67' },
     },
   ],
-  exchangeOptions: [
-    {
+  exchangeOptions: {
+    binance: {
       exchange: 'Binance',
       pairs: [
         {
@@ -26,7 +28,7 @@ const initialState = {
         },
       ],
     },
-  ],
+  },
 };
 
 const exchangesSlice = createSlice({
@@ -36,11 +38,15 @@ const exchangesSlice = createSlice({
     updateExchange: (state, action) => {
       state.name = action.payload;
     },
+    setExchangeOptions: (state, action) => {
+      const options = createExchangeOptions(action.payload);
+      state.exchangeOptions = options;
+    },
   },
 });
 
-const { updateExchange } = exchangesSlice.actions;
+const { updateExchange, setExchangeOptions } = exchangesSlice.actions;
 
-export { updateExchange };
+export { updateExchange, setExchangeOptions };
 
 export default exchangesSlice.reducer;

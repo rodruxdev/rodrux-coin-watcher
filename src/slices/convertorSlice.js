@@ -11,7 +11,6 @@ const convertorSlice = createSlice({
   reducers: {
     setCoinToConvert: (state, action) => {
       const coinConversion = createCoinConversion(action.payload);
-      console.log(coinConversion);
       state.coinConversion = coinConversion;
     },
     // TODO Define to change both at once or set one by one

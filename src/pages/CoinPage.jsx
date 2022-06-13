@@ -28,18 +28,16 @@ function CoinPage() {
   const mainCoin = [convertorInfo.coin];
   // Exchanges info and options
   const exchangesInfo = useSelector((state) => state.exchanges);
-  const exchanges = exchangesInfo.exchangeOptions.map(
-    (exchangeInfo) => exchangeInfo.exchange
+  const optionsKeys = Object.keys(exchangesInfo.exchangeOptions);
+  const exchanges = optionsKeys.map(
+    (key) => exchangesInfo.exchangeOptions[key].exchange
   );
   const pairsData = exchangesInfo.actualInfo.map((exchangeSelected) => {
-    const exchangeIndex = exchanges.findIndex(
-      (exchange) => exchange === exchangeSelected.exchange
-    );
-    return exchangesInfo.exchangeOptions[exchangeIndex].pairs;
+    const key = exchangeSelected.exchangeId;
+    return exchangesInfo.exchangeOptions[key].pairs;
   });
   // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
   const pairs = pairsData[0].map((pairData) => pairData.pair);
-
   useEffect(() => {
     dispatch(fetchCoin('ethereum'));
   }, []);
