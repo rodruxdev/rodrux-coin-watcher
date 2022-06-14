@@ -13,18 +13,16 @@ const convertorSlice = createSlice({
       const coinConversion = createCoinConversion(action.payload);
       state.coinConversion = coinConversion;
     },
-    // TODO Define to change both at once or set one by one
-    setPrice: (state, action) => {
-      state.coinPrice = action.payload;
-    },
-    setConversion: (state, action) => {
-      state.conversion = action.payload;
+    setPriceConversion: (state, action) => {
+      const { newCoinPrice, newConversion } = action.payload;
+      state.coinConversion.coinPrice = newCoinPrice;
+      state.coinConversion.conversion = newConversion;
     },
   },
 });
 
-const { setCoinToConvert, setPrice, setConversion } = convertorSlice.actions;
+const { setCoinToConvert, setPriceConversion } = convertorSlice.actions;
 
-export { setCoinToConvert, setPrice, setConversion };
+export { setCoinToConvert, setPriceConversion };
 
 export default convertorSlice.reducer;

@@ -65,7 +65,10 @@
       "\\.(css|less)$": "identity-obj-proxy",
       "^@components(.*)$": "<rootDir>/src/components/$1",
       "^@containers(.*)$": "<rootDir>/src/containers/$1",
-      "^@slices(.*)$": "<rootDir>/src/slices/$1"
+      "^@slices(.*)$": "<rootDir>/src/slices/$1",
+      "^@services(.*)$": "<rootDir>/src/services/$1",
+      "^@lib(.*)$": "<rootDir>/src/lib/$1",
+      "^@api(.*)$": "<rootDir>/src/api/$1"
     },
     "testEnvironment": "jest-environment-jsdom"
   }

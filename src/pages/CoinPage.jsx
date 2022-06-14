@@ -38,7 +38,6 @@ function CoinPage() {
     return exchangesInfo.exchangeOptions[key]?.pairs;
   });
   // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
-  // TODO: Change the logic to get an array with three arrays to show separately the pairs options.
   const pairs = pairsData[0]?.map((pairData) => pairData?.pair) ?? ['BUSD/BTC'];
   useEffect(() => {
     dispatch(fetchCoin('ethereum'));
@@ -97,7 +96,7 @@ function CoinPage() {
           <div className="coin-convertor">
             <div className="coin-convertor__container">
               <CoinSelector options={mainCoin} />
-              <CoinConversion />
+              <CoinConversion type="main" />
             </div>
             <SwitchButton />
             <div className="coin-convertor__container">
