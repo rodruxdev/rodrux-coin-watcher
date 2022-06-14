@@ -16,6 +16,7 @@ import CoinCard from '@containers/CoinCard';
 import '@styles/pages/CoinPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '../slices/coinSlice';
+// import { fetchExchangeImages } from '../slices/exchangesSlice';
 
 function CoinPage() {
   const dispatch = useDispatch();
@@ -107,7 +108,10 @@ function CoinPage() {
           <div>
             <h4>Exchange Pair</h4>
             <div className="exchanges-container">
-              <ExchangePair image="/" exchange="Binance">
+              <ExchangePair
+                image={exchangesInfo?.actualInfo[0]?.image}
+                exchange="Binance"
+              >
                 <div className="exchange-info__container">
                   <ExchangeSelector options={exchanges} />
                   <PairSelector options={pairs} />
@@ -121,7 +125,10 @@ function CoinPage() {
                   </PairInfo>
                 </div>
               </ExchangePair>
-              <ExchangePair image="/" exchange="Binance">
+              <ExchangePair
+                image={exchangesInfo?.actualInfo[1]?.image}
+                exchange="Binance"
+              >
                 <div className="exchange-info__container">
                   <ExchangeSelector options={exchanges} />
                   <PairSelector options={pairs} />
@@ -135,7 +142,10 @@ function CoinPage() {
                   </PairInfo>
                 </div>
               </ExchangePair>
-              <ExchangePair image="/" exchange="Binance">
+              <ExchangePair
+                image={exchangesInfo?.actualInfo[2]?.image}
+                exchange="Binance"
+              >
                 <div className="exchange-info__container">
                   <ExchangeSelector options={exchanges} />
                   <PairSelector options={pairs} />

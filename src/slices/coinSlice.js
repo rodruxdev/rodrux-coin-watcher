@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import getCoin from '@api/getCoin';
 import createCoinInfo from '../lib/createCoinInfo';
 import { setCoinToConvert } from './convertorSlice';
-import { setExchangeOptions } from './exchangesSlice';
+import { fetchExchangeImages, setExchangeOptions } from './exchangesSlice';
 import { fetchRelatedCoins } from './relatedCoinsSlice';
 
 const initialState = {
@@ -19,6 +19,7 @@ export const fetchCoin = createAsyncThunk(
       dispatch(setCoin(coinInfo));
       dispatch(setCoinToConvert(response));
       dispatch(setExchangeOptions(response.tickers));
+      dispatch(fetchExchangeImages());
       dispatch(fetchRelatedCoins(response.categories));
     } catch (err) {
       console.log(err, 'Error on fetching coin');
