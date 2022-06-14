@@ -18,11 +18,15 @@ const convertorSlice = createSlice({
       state.coinConversion.coinPrice = newCoinPrice;
       state.coinConversion.conversion = newConversion;
     },
+    setConvertedCoin: (state, action) => {
+      state.coinConversion.convertedCoin = action.payload;
+    },
   },
 });
 
-const { setCoinToConvert, setPriceConversion } = convertorSlice.actions;
+const { setCoinToConvert, setPriceConversion, setConvertedCoin } =
+  convertorSlice.actions;
 
-export { setCoinToConvert, setPriceConversion };
+export { setCoinToConvert, setPriceConversion, setConvertedCoin };
 
 export default convertorSlice.reducer;

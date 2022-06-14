@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '@styles/components/CoinConversion.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPriceConversion } from '@slices/convertorSlice';
@@ -17,6 +17,12 @@ function CoinConversion({ type }) {
     const payload = convertCoins(valueInput, conversionState, type);
     dispatch(setPriceConversion(payload));
   };
+  useEffect(() => {
+    if (value && Object.keys(conversionState).length !== 0 && type === 'main') {
+      const payload = convertCoins(value, conversionState, type);
+      dispatch(setPriceConversion(payload));
+    }
+  }, [conversionState?.convertedCoin]);
   return (
     <div className="input-convertor">
       <input

@@ -96,11 +96,14 @@ function CoinPage() {
           <div className="coin-convertor">
             <div className="coin-convertor__container">
               <CoinSelector options={mainCoin} />
-              <CoinConversion type="main" />
+              <CoinConversion type="main" selectedValue={convertorInfo.coin} />
             </div>
             <SwitchButton />
             <div className="coin-convertor__container">
-              <CoinSelector options={optionsConvertor || []} />
+              <CoinSelector
+                options={optionsConvertor || []}
+                selectedValue={convertorInfo.convertedCoin}
+              />
               <CoinConversion />
             </div>
           </div>
