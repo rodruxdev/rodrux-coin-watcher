@@ -16,10 +16,11 @@ import CoinTitle from '@components/CoinTitle';
 import CoinCard from '@containers/CoinCard';
 import '@styles/pages/CoinPage.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCoin } from '../slices/coinSlice';
-// import { fetchExchangeImages } from '../slices/exchangesSlice';
+import { fetchCoin } from '@slices/coinSlice';
+import { useParams } from 'react-router-dom';
 
 function CoinPage() {
+  const { id } = useParams();
   const dispatch = useDispatch();
   const coinInfo = useSelector((state) => state.coin.coinInfo);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
@@ -44,7 +45,7 @@ function CoinPage() {
     return pairList ?? [];
   });
   useEffect(() => {
-    dispatch(fetchCoin('ethereum'));
+    dispatch(fetchCoin(id));
   }, []);
   return (
     <main className="coin-page">
