@@ -5,7 +5,7 @@ const createRelatedCoins = (response) => {
     const coin = response[randomIndex];
     const coinId = coin.id;
     const ticker = coin.symbol?.toUpperCase();
-    const title = `${coin.name}(${ticker})`;
+    const title = `${coin.name} (${ticker})`;
     const price = `$${coin.current_price} USD`;
     const marketCap = `$${coin.market_cap} USD`;
     const relatedCoin = {

@@ -16,10 +16,11 @@ import CoinTitle from '@components/CoinTitle';
 import CoinCard from '@containers/CoinCard';
 import '@styles/pages/CoinPage.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCoin } from '../slices/coinSlice';
-// import { fetchExchangeImages } from '../slices/exchangesSlice';
+import { fetchCoin } from '@slices/coinSlice';
+import { useParams } from 'react-router-dom';
 
 function CoinPage() {
+  const { id } = useParams();
   const dispatch = useDispatch();
   const coinInfo = useSelector((state) => state.coin.coinInfo);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
@@ -40,12 +41,20 @@ function CoinPage() {
   });
   // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
   const pairs = pairsData?.map((pairData) => {
-    const pairList = pairData.map((item) => item.pair);
+    const pairList = pairData?.map((item) => item.pair);
     return pairList ?? [];
   });
   useEffect(() => {
-    dispatch(fetchCoin('ethereum'));
-  }, []);
+    const currentScroll =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    dispatch(fetchCoin(id));
+    if (currentScroll > 0) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  }, [id]);
   return (
     <main className="coin-page">
       <section className="search">
@@ -147,7 +156,19 @@ function CoinPage() {
         </div>
       </section>
       <RelatedCoins>
-        <CoinCard>
+        {relatedCoins.map((relatedCoin) => (
+          <CoinCard
+            coinId={relatedCoin?.coinId}
+            key={`card-${relatedCoin?.coinId}`}
+          >
+            <CoinTitle title={relatedCoin?.title} image={relatedCoin?.image} />
+            <div>
+              <PairInfo title="Price">{relatedCoin?.price}</PairInfo>
+              <PairInfo title="Market Cap">{relatedCoin?.marketCap}</PairInfo>
+            </div>
+          </CoinCard>
+        ))}
+        {/* <CoinCard coinId={relatedCoins[0]?.coinId}>
           <CoinTitle
             title={relatedCoins[0]?.title}
             image={relatedCoins[0]?.image}
@@ -206,7 +227,7 @@ function CoinPage() {
             <PairInfo title="Price">{relatedCoins[5]?.price}</PairInfo>
             <PairInfo title="Market Cap">{relatedCoins[5]?.marketCap}</PairInfo>
           </div>
-        </CoinCard>
+        </CoinCard> */}
       </RelatedCoins>
     </main>
   );
