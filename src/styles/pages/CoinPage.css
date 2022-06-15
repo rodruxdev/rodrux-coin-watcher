@@ -3,6 +3,7 @@
   max-width: 1745px;
   margin-inline: auto;
   padding: 2vw;
+  scroll-behavior: smooth;
 }
 
 .search {

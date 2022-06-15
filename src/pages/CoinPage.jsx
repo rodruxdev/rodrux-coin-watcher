@@ -45,7 +45,15 @@ function CoinPage() {
     return pairList ?? [];
   });
   useEffect(() => {
+    const currentScroll =
+      document.documentElement.scrollTop || document.body.scrollTop;
     dispatch(fetchCoin(id));
+    if (currentScroll > 0) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
   }, [id]);
   return (
     <main className="coin-page">
