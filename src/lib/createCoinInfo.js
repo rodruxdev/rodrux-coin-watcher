@@ -60,7 +60,7 @@ const createCoinInfo = (response) => {
     image,
     description,
     moreInfo,
-    title: `${name}(${ticker})`,
+    title: `${name} (${ticker})`,
     priceTitle: `$${price} USD`,
   };
   return coinInfo;

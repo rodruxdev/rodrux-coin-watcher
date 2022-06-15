@@ -46,7 +46,7 @@ function CoinPage() {
   });
   useEffect(() => {
     dispatch(fetchCoin(id));
-  }, []);
+  }, [id]);
   return (
     <main className="coin-page">
       <section className="search">
@@ -148,7 +148,19 @@ function CoinPage() {
         </div>
       </section>
       <RelatedCoins>
-        <CoinCard>
+        {relatedCoins.map((relatedCoin) => (
+          <CoinCard
+            coinId={relatedCoin?.coinId}
+            key={`card-${relatedCoin?.coinId}`}
+          >
+            <CoinTitle title={relatedCoin?.title} image={relatedCoin?.image} />
+            <div>
+              <PairInfo title="Price">{relatedCoin?.price}</PairInfo>
+              <PairInfo title="Market Cap">{relatedCoin?.marketCap}</PairInfo>
+            </div>
+          </CoinCard>
+        ))}
+        {/* <CoinCard coinId={relatedCoins[0]?.coinId}>
           <CoinTitle
             title={relatedCoins[0]?.title}
             image={relatedCoins[0]?.image}
@@ -207,7 +219,7 @@ function CoinPage() {
             <PairInfo title="Price">{relatedCoins[5]?.price}</PairInfo>
             <PairInfo title="Market Cap">{relatedCoins[5]?.marketCap}</PairInfo>
           </div>
-        </CoinCard>
+        </CoinCard> */}
       </RelatedCoins>
     </main>
   );
