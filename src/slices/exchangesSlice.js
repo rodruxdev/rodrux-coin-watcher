@@ -38,12 +38,25 @@ const exchangesSlice = createSlice({
       const options = createExchangeOptions(action.payload);
       state.exchangeOptions = options;
     },
+    setExchange: (state, action) => {
+      const { newExchange, index } = action.payload;
+      state.actualInfo[index] = newExchange;
+    },
   },
 });
 
-const { setActualExchanges, setExchangeImages, setExchangeOptions } =
-  exchangesSlice.actions;
+const {
+  setActualExchanges,
+  setExchangeImages,
+  setExchangeOptions,
+  setExchange,
+} = exchangesSlice.actions;
 
-export { setActualExchanges, setExchangeImages, setExchangeOptions };
+export {
+  setActualExchanges,
+  setExchangeImages,
+  setExchangeOptions,
+  setExchange,
+};
 
 export default exchangesSlice.reducer;

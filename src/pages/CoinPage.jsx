@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useEffect } from 'react';
 import SearchBar from '@components/SearchBar';
 import CoinPrice from '@components/CoinPrice';
@@ -110,57 +111,30 @@ function CoinPage() {
           <div>
             <h4>Exchange Pair</h4>
             <div className="exchanges-container">
-              <ExchangePair
-                image={exchangesInfo?.actualInfo[0]?.image}
-                exchange="Binance"
-              >
-                <div className="exchange-info__container">
-                  <ExchangeSelector options={exchanges} />
-                  <PairSelector options={pairs} />
-                </div>
-                <div className="exchange-info__container exchange-info__info">
-                  <PairInfo title="Price">
-                    {exchangesInfo?.actualInfo[0]?.data?.price}
-                  </PairInfo>
-                  <PairInfo title="Volume">
-                    {exchangesInfo?.actualInfo[0]?.data?.volume}
-                  </PairInfo>
-                </div>
-              </ExchangePair>
-              <ExchangePair
-                image={exchangesInfo?.actualInfo[1]?.image}
-                exchange="Binance"
-              >
-                <div className="exchange-info__container">
-                  <ExchangeSelector options={exchanges} />
-                  <PairSelector options={pairs} />
-                </div>
-                <div className="exchange-info__container exchange-info__info">
-                  <PairInfo title="Price">
-                    {exchangesInfo?.actualInfo[1]?.data?.price}
-                  </PairInfo>
-                  <PairInfo title="Volume">
-                    {exchangesInfo?.actualInfo[1]?.data?.volume}
-                  </PairInfo>
-                </div>
-              </ExchangePair>
-              <ExchangePair
-                image={exchangesInfo?.actualInfo[2]?.image}
-                exchange="Binance"
-              >
-                <div className="exchange-info__container">
-                  <ExchangeSelector options={exchanges} />
-                  <PairSelector options={pairs} />
-                </div>
-                <div className="exchange-info__container exchange-info__info">
-                  <PairInfo title="Price">
-                    {exchangesInfo?.actualInfo[2]?.data?.price}
-                  </PairInfo>
-                  <PairInfo title="Volume">
-                    {exchangesInfo?.actualInfo[2]?.data?.volume}
-                  </PairInfo>
-                </div>
-              </ExchangePair>
+              {exchangesInfo?.actualInfo.map((actualExchange, index) => (
+                <ExchangePair
+                  image={actualExchange.image}
+                  exchange={actualExchange.exchange}
+                  key={`exchange-${index}`}
+                >
+                  <div className="exchange-info__container">
+                    <ExchangeSelector
+                      options={exchanges}
+                      selectedExchange={actualExchange.exchange}
+                      index={index}
+                    />
+                    <PairSelector options={pairs} />
+                  </div>
+                  <div className="exchange-info__container exchange-info__info">
+                    <PairInfo title="Price">
+                      {actualExchange.data?.price}
+                    </PairInfo>
+                    <PairInfo title="Volume">
+                      {actualExchange.data?.volume}
+                    </PairInfo>
+                  </div>
+                </ExchangePair>
+              ))}
             </div>
           </div>
         </div>
