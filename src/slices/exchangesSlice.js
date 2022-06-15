@@ -1,46 +1,69 @@
-import { createSlice } from '@reduxjs/toolkit';
+/* eslint-disable no-use-before-define */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import createActualExchanges from '../lib/createActualExchanges';
+import createExchangeOptions from '../lib/createExchangeOptions';
 
 const initialState = {
-  actualInfo: [
-    {
-      exchange: 'Binance',
-      pair: 'BTC/USD',
-      data: { price: '$12345.67', volume: '$12345.67' },
-    },
-  ],
-  exchangeOptions: [
-    {
-      exchange: 'Binance',
-      pairs: [
-        {
-          pair: 'BTC/USD',
-          data: { price: '$12345.67', volume: '$12345.67' },
-        },
-        {
-          pair: 'BTC/USDT',
-          data: { price: '$12345.67', volume: '$12345.67' },
-        },
-        {
-          pair: 'BTC/USDC',
-          data: { price: '$12345.67', volume: '$12345.67' },
-        },
-      ],
-    },
-  ],
+  actualInfo: [],
+  exchangeOptions: {},
 };
+
+export const fetchExchangeImages = createAsyncThunk(
+  'exchanges/fetchExchangeImages',
+  async (_, { dispatch, getState }) => {
+    try {
+      const { exchangeOptions } = getState().exchanges;
+      const response = await createActualExchanges(exchangeOptions);
+      dispatch(setActualExchanges(response));
+    } catch (err) {
+      console.log(err, 'Error on fetching coin');
+    }
+  }
+);
 
 const exchangesSlice = createSlice({
   name: 'exchanges',
   initialState,
   reducers: {
-    updateExchange: (state, action) => {
-      state.name = action.payload;
+    setActualExchanges: (state, action) => {
+      state.actualInfo = action.payload;
+    },
+    setExchangeImages: (state, action) => {
+      const images = action.payload;
+      images.forEach((image, index) => {
+        state.actualInfo[index].image = image;
+      });
+    },
+    setExchangeOptions: (state, action) => {
+      const options = createExchangeOptions(action.payload);
+      state.exchangeOptions = options;
+    },
+    setExchange: (state, action) => {
+      const { newExchange, index } = action.payload;
+      state.actualInfo[index] = newExchange;
+    },
+    setPair: (state, action) => {
+      const { newPair, index } = action.payload;
+      state.actualInfo[index].pair = newPair.pair;
+      state.actualInfo[index].data = newPair.data;
     },
   },
 });
 
-const { updateExchange } = exchangesSlice.actions;
+const {
+  setActualExchanges,
+  setExchangeImages,
+  setExchangeOptions,
+  setExchange,
+  setPair,
+} = exchangesSlice.actions;
 
-export { updateExchange };
+export {
+  setActualExchanges,
+  setExchangeImages,
+  setExchangeOptions,
+  setExchange,
+  setPair,
+};
 
 export default exchangesSlice.reducer;

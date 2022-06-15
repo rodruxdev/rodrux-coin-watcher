@@ -8,14 +8,14 @@ const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    updateSearch: (state, action) => {
+    setSearch: (state, action) => {
       state.searchInput = action.payload;
     },
   },
 });
 
-const { updateSearch } = uiSlice.actions;
+const { setSearch } = uiSlice.actions;
 
-export { updateSearch };
+export { setSearch };
 
 export default uiSlice.reducer;

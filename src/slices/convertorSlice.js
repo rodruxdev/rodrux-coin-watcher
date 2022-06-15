@@ -1,38 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
+import createCoinConversion from '../lib/createCoinConversion';
 
 const initialState = {
-  coin: 'BTC',
-  coinPrice: 1,
-  conversion: 12345.67,
-  conversionOptions: [
-    {
-      coin: 'USD',
-      conversionRatio: 12345.67,
-    },
-  ],
+  coinConversion: {},
 };
 
 const convertorSlice = createSlice({
   name: 'convertor',
   initialState,
   reducers: {
-    setCoin: (state, action) => {
-      const { newCoin, newConversionOptions } = action.payload;
-      state.coin = newCoin;
-      state.conversionOptions = newConversionOptions;
+    setCoinToConvert: (state, action) => {
+      const coinConversion = createCoinConversion(action.payload);
+      state.coinConversion = coinConversion;
     },
-    // TODO Define to change both at once or set one by one
-    setPrice: (state, action) => {
-      state.coinPrice = action.payload;
+    setPriceConversion: (state, action) => {
+      const { newCoinPrice, newConversion } = action.payload;
+      state.coinConversion.coinPrice = newCoinPrice;
+      state.coinConversion.conversion = newConversion;
     },
-    setConversion: (state, action) => {
-      state.conversion = action.payload;
+    setConvertedCoin: (state, action) => {
+      state.coinConversion.convertedCoin = action.payload;
     },
   },
 });
 
-const { setCoin, setPrice, setConversion } = convertorSlice.actions;
+const { setCoinToConvert, setPriceConversion, setConvertedCoin } =
+  convertorSlice.actions;
 
-export { setCoin, setPrice, setConversion };
+export { setCoinToConvert, setPriceConversion, setConvertedCoin };
 
 export default convertorSlice.reducer;

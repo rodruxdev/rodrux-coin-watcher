@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CoinsTable from '@containers/CoinsTable';
 import HeroText from '@components/HeroText';
 import SearchBar from '@components/SearchBar';
 import TableRow from '@components/TableRow';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '@styles/pages/Home.css';
+import { fetchCoins } from '../slices/tableSlice';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCoins());
+  }, []);
   return (
     <main className="home">
       <section>

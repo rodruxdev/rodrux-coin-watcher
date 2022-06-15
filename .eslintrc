@@ -24,6 +24,7 @@
         ]
       }
     ],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "react/prop-types": 0,
     "no-underscore-dangle": 0,
     "import/imports-first": [

@@ -4,9 +4,9 @@ import '@styles/components/SwitchButton.css';
 
 function SwitchButton() {
   return (
-    <button type="button" className="switch" aria-label="conversion button">
+    <div className="switch">
       <MdSwapVert className="switch__icon" />
-    </button>
+    </div>
   );
 }
 
