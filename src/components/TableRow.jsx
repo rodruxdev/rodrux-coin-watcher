@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function TableRow({
   coinId,
+  coinRank,
   name,
   ticker,
-  // images,
+  image,
   price,
   marketCap,
   percentageChanges,
@@ -14,18 +16,18 @@ function TableRow({
   return (
     <tr className="table-row">
       <td className="table-row--center">
-        <span>{coinId}</span>
+        <span>{coinRank}</span>
       </td>
       <td className="table-row--center">
-        <a className="table-row__coin" href="/">
+        <Link className="table-row__coin" to={`/coin/${coinId}`}>
           <div className="image-container">
-            <img src="/" alt="" />
+            <img src={image} alt={`${name} logo`} />
           </div>
           <p>
             <span className="table-row__coin-name">{name}</span>
             <span> {ticker}</span>
           </p>
-        </a>
+        </Link>
       </td>
       <td className="table-row--right">
         <span>${price}</span>

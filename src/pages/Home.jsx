@@ -25,9 +25,10 @@ function Home() {
           {coins.map((coin) => {
             const {
               coinId,
+              coinRank,
               name,
               ticker,
-              // images,
+              image,
               price,
               marketCap,
               percentageChanges,
@@ -37,8 +38,10 @@ function Home() {
             return (
               <TableRow
                 coinId={coinId}
+                coinRank={coinRank}
                 name={name}
                 ticker={ticker}
+                image={image}
                 price={price}
                 marketCap={marketCap}
                 percentageChanges={percentageChanges}

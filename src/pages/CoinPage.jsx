@@ -41,7 +41,7 @@ function CoinPage() {
   });
   // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
   const pairs = pairsData?.map((pairData) => {
-    const pairList = pairData.map((item) => item.pair);
+    const pairList = pairData?.map((item) => item.pair);
     return pairList ?? [];
   });
   useEffect(() => {
