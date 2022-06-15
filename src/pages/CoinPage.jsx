@@ -39,7 +39,10 @@ function CoinPage() {
     return exchangesInfo.exchangeOptions[key]?.pairs;
   });
   // PairsData is an array of three positions, pairs should get an array of three positions with an array inside with the options
-  const pairs = pairsData[0]?.map((pairData) => pairData?.pair) ?? ['BUSD/BTC'];
+  const pairs = pairsData?.map((pairData) => {
+    const pairList = pairData.map((item) => item.pair);
+    return pairList ?? [];
+  });
   useEffect(() => {
     dispatch(fetchCoin('ethereum'));
   }, []);
@@ -123,7 +126,11 @@ function CoinPage() {
                       selectedExchange={actualExchange.exchange}
                       index={index}
                     />
-                    <PairSelector options={pairs} />
+                    <PairSelector
+                      options={pairs[index]}
+                      selectedPair={actualExchange.pair}
+                      index={index}
+                    />
                   </div>
                   <div className="exchange-info__container exchange-info__info">
                     <PairInfo title="Price">

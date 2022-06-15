@@ -42,6 +42,11 @@ const exchangesSlice = createSlice({
       const { newExchange, index } = action.payload;
       state.actualInfo[index] = newExchange;
     },
+    setPair: (state, action) => {
+      const { newPair, index } = action.payload;
+      state.actualInfo[index].pair = newPair.pair;
+      state.actualInfo[index].data = newPair.data;
+    },
   },
 });
 
@@ -50,6 +55,7 @@ const {
   setExchangeImages,
   setExchangeOptions,
   setExchange,
+  setPair,
 } = exchangesSlice.actions;
 
 export {
@@ -57,6 +63,7 @@ export {
   setExchangeImages,
   setExchangeOptions,
   setExchange,
+  setPair,
 };
 
 export default exchangesSlice.reducer;
