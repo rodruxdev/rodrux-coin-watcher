@@ -4,8 +4,8 @@ import HeroText from '@components/HeroText';
 import SearchBar from '@components/SearchBar';
 import TableRow from '@components/TableRow';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchCoins } from '@slices/tableSlice';
 import '@styles/pages/Home.css';
-import { fetchCoins } from '../slices/tableSlice';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);
