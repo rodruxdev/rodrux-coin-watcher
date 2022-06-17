@@ -7,9 +7,7 @@ function HeroText() {
       <h1>RODRUX COIN WATCHER</h1>
       <h2>Search your favorite cryptocoin and get its basic info.</h2>
       <p className="hero-text__paragraph">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea ab culpa
-        quae nihil ipsum voluptate, amet excepturi fugiat numquam illo dicta sed
-        quis pariatur at obcaecati quisquam placeat quidem distinctio!
+        {`For each coin you can find basic market information, a convertor and information of the exchanges where the coin is available. You'll also see some related coins. All the information comes from Coingecko API.`}
       </p>
     </section>
   );
