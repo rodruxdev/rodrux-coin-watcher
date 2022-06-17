@@ -14,6 +14,16 @@
   position: absolute;
 }
 
+.coin-selector__selector:focus{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--dark);
+}
+
+.coin-selector__selector option {
+  background-color: var(--background);
+}
+
 .coin-selector__icon-container {
   width: 20px;
   height: 20px;

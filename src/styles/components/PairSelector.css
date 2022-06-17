@@ -14,6 +14,16 @@
   position: absolute;
 }
 
+.pair_selector:focus{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--dark);
+}
+
+.pair_selector option {
+  background-color: var(--background);
+}
+
 .pair__icon-container {
   width: 20px;
   height: 20px;

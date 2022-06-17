@@ -6,6 +6,17 @@
   text-align: center;
 }
 
+.exchange:focus{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--dark);
+}
+
+.exchange option {
+  background-color: var(--background);
+  color: var(--dark);
+}
+
 @media (min-width: 600px) {
   .exchange {
     width: 165px;

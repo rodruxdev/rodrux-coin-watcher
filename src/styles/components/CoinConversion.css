@@ -13,6 +13,12 @@
   border: var(--dark-border);
 }
 
+.input-convertor__input:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--secondary);
+}
+
 @media (min-width: 600px) {
   .input-convertor {
     width: 315px;
