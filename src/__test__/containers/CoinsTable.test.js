@@ -8,11 +8,11 @@ describe('CoinsTable Tests', () => {
   const coin = {
     name: 'Bitcoin',
     ticker: 'BTC',
-    price: 0.00002452,
+    price: '$0.00002452',
     images: ['/', '/', '/'],
     percentageChanges: [1234.5, -2.5, 1.7],
-    marketCap: '772,504,060,812',
-    ath: '772,504',
+    marketCap: '$772,504,060,812',
+    ath: '$772,504',
     athPercentage: 1234.5,
     coinId: 1,
   };

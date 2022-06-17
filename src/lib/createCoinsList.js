@@ -27,12 +27,23 @@ const createCoinsList = (response) =>
       coinRank,
       name,
       ticker,
-      price,
+      price: price?.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      }),
       image,
       percentageChanges,
-      marketCap,
-      ath,
-      athPercentage,
+      marketCap: marketCap
+        .toLocaleString('en-US', {
+          style: 'currency',
+          currency: 'USD',
+        })
+        .slice(0, -3),
+      ath: ath.toLocaleString('en-US', { style: 'currency', currency: 'USD' }),
+      athPercentage: athPercentage.toLocaleString('en-US', {
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2,
+      }),
     };
     return coinTableInfo;
   });
