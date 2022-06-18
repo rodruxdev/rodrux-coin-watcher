@@ -9,7 +9,7 @@
   height: 100%;
   padding-left: 15px;
   border-radius: 8px;
-  border: var(--primary-border);
+  border: var(--secondary-border);
   background-color: transparent;
   position: absolute;
 }

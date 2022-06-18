@@ -18,6 +18,7 @@ import '@styles/pages/CoinPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '@slices/coinSlice';
 import { useParams } from 'react-router-dom';
+import CoinSelected from '../components/CoinSelected';
 
 function CoinPage() {
   const { id } = useParams();
@@ -105,7 +106,7 @@ function CoinPage() {
           </div>
           <div className="coin-convertor">
             <div className="coin-convertor__container">
-              <CoinSelector options={mainCoin} />
+              <CoinSelected coin={mainCoin} />
               <CoinConversion type="main" selectedValue={convertorInfo.coin} />
             </div>
             <SwitchButton />

@@ -27,10 +27,6 @@
   gap: 10px;
 }
 
-.coin-convertor__container:last-child .coin-selector__selector{
-  border: var(--secondary-border);
-}
-
 .exchanges-container {
   margin: 20px auto;
   display: grid;
