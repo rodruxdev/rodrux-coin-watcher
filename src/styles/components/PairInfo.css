@@ -33,3 +33,10 @@
     margin-top: 10px;
   }
 }
+
+@media (min-width: 950px){
+  .pair-info {
+    width: 100%;
+    max-width: 380px;
+  }
+}

@@ -21,6 +21,9 @@ function PairSelector({ options, selectedPair, index }) {
   };
   return (
     <div className="pair">
+      <label htmlFor="coin" className="pair__icon-container">
+        <MdKeyboardArrowDown className="pair__icon" />
+      </label>
       <select
         name="pair"
         id="pair"
@@ -35,9 +38,6 @@ function PairSelector({ options, selectedPair, index }) {
           </option>
         ))}
       </select>
-      <label htmlFor="coin" className="pair__icon-container">
-        <MdKeyboardArrowDown className="pair__icon" />
-      </label>
     </div>
   );
 }

@@ -6,7 +6,6 @@ const createCoinInfo = (response) => {
   const image = response?.image?.thumb;
   const description = response?.description?.en;
   const categories = response?.categories;
-  const roi = response?.market_data?.roi?.percentage;
   const ath = response?.market_data?.ath?.usd;
   const atl = response?.market_data?.atl?.usd;
   const athPercentage = response?.market_data?.ath_change_percentage?.usd;
@@ -22,10 +21,6 @@ const createCoinInfo = (response) => {
   ];
   const coinQuantity = response.market_data?.circulating_supply;
   const moreInfo = {
-    roi: `${roi?.toLocaleString('en-US', {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2,
-    })}%`,
     ath: `$${ath} USD`,
     atl: `$${atl} USD`,
     athPercentage: `${athPercentage?.toLocaleString('en-US', {

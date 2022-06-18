@@ -25,3 +25,9 @@
     height: 45px;
   }
 }
+
+@media (min-width: 950px) {
+  .switch__icon{
+    transform: rotate(90deg);
+  }
+}

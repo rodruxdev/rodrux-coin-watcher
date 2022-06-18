@@ -54,3 +54,10 @@
     right: 6px;
   }
 }
+
+@media (min-width: 600px) {
+  .pair {
+    width: 95%;
+    max-width: 300px;
+  }
+}

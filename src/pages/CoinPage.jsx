@@ -70,7 +70,6 @@ function CoinPage() {
           </div>
           <div className="coin-info__container">
             <h4>More Information</h4>
-            <CoinMoreInfo title="ROI">{coinInfo.moreInfo?.roi}</CoinMoreInfo>
             <CoinMoreInfo title="ATH">{coinInfo.moreInfo?.ath}</CoinMoreInfo>
             <CoinMoreInfo title="ATL">{coinInfo.moreInfo?.atl}</CoinMoreInfo>
             <CoinMoreInfo title="ATH Percentage Change">
@@ -104,8 +103,6 @@ function CoinPage() {
               {coinInfo.moreInfo?.coinQuantity}
             </CoinMoreInfo>
           </div>
-        </div>
-        <div className="flexb">
           <div className="coin-convertor">
             <div className="coin-convertor__container">
               <CoinSelector options={mainCoin} />
@@ -120,38 +117,38 @@ function CoinPage() {
               <CoinConversion />
             </div>
           </div>
-          <div>
-            <h4>Exchange Pair</h4>
-            <div className="exchanges-container">
-              {exchangesInfo?.actualInfo.map((actualExchange, index) => (
-                <ExchangePair
-                  image={actualExchange.image}
-                  exchange={actualExchange.exchange}
-                  key={`exchange-${index}`}
-                >
-                  <div className="exchange-info__container">
-                    <ExchangeSelector
-                      options={exchanges}
-                      selectedExchange={actualExchange.exchange}
-                      index={index}
-                    />
-                    <PairSelector
-                      options={pairs[index]}
-                      selectedPair={actualExchange.pair}
-                      index={index}
-                    />
-                  </div>
-                  <div className="exchange-info__container exchange-info__info">
-                    <PairInfo title="Price">
-                      {actualExchange.data?.price}
-                    </PairInfo>
-                    <PairInfo title="Volume">
-                      {actualExchange.data?.volume}
-                    </PairInfo>
-                  </div>
-                </ExchangePair>
-              ))}
-            </div>
+        </div>
+        <div>
+          <h4>Exchanges</h4>
+          <div className="exchanges-container">
+            {exchangesInfo?.actualInfo.map((actualExchange, index) => (
+              <ExchangePair
+                image={actualExchange.image}
+                exchange={actualExchange.exchange}
+                key={`exchange-${index}`}
+              >
+                <div className="exchange-info__container">
+                  <ExchangeSelector
+                    options={exchanges}
+                    selectedExchange={actualExchange.exchange}
+                    index={index}
+                  />
+                  <PairSelector
+                    options={pairs[index]}
+                    selectedPair={actualExchange.pair}
+                    index={index}
+                  />
+                </div>
+                <div className="exchange-info__container exchange-info__info">
+                  <PairInfo title="Price">
+                    {actualExchange.data?.price}
+                  </PairInfo>
+                  <PairInfo title="Volume">
+                    {actualExchange.data?.volume}
+                  </PairInfo>
+                </div>
+              </ExchangePair>
+            ))}
           </div>
         </div>
       </section>
@@ -168,66 +165,6 @@ function CoinPage() {
             </div>
           </CoinCard>
         ))}
-        {/* <CoinCard coinId={relatedCoins[0]?.coinId}>
-          <CoinTitle
-            title={relatedCoins[0]?.title}
-            image={relatedCoins[0]?.image}
-          />
-          <div>
-            <PairInfo title="Price">{relatedCoins[0]?.price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[0]?.marketCap}</PairInfo>
-          </div>
-        </CoinCard>
-        <CoinCard>
-          <CoinTitle
-            title={relatedCoins[1]?.title}
-            image={relatedCoins[1]?.image}
-          />
-          <div>
-            <PairInfo title="Price">{relatedCoins[1]?.price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[1]?.marketCap}</PairInfo>
-          </div>
-        </CoinCard>
-        <CoinCard>
-          <CoinTitle
-            title={relatedCoins[2]?.title}
-            image={relatedCoins[2]?.image}
-          />
-          <div>
-            <PairInfo title="Price">{relatedCoins[2]?.price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[2]?.marketCap}</PairInfo>
-          </div>
-        </CoinCard>
-        <CoinCard>
-          <CoinTitle
-            title={relatedCoins[3]?.title}
-            image={relatedCoins[3]?.image}
-          />
-          <div>
-            <PairInfo title="Price">{relatedCoins[3]?.price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[3]?.marketCap}</PairInfo>
-          </div>
-        </CoinCard>
-        <CoinCard>
-          <CoinTitle
-            title={relatedCoins[4]?.title}
-            image={relatedCoins[4]?.image}
-          />
-          <div>
-            <PairInfo title="Price">{relatedCoins[4]?.price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[4]?.marketCap}</PairInfo>
-          </div>
-        </CoinCard>
-        <CoinCard>
-          <CoinTitle
-            title={relatedCoins[5]?.title}
-            image={relatedCoins[5]?.image}
-          />
-          <div>
-            <PairInfo title="Price">{relatedCoins[5]?.price}</PairInfo>
-            <PairInfo title="Market Cap">{relatedCoins[5]?.marketCap}</PairInfo>
-          </div>
-        </CoinCard> */}
       </RelatedCoins>
     </main>
   );
