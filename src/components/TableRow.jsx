@@ -33,13 +33,13 @@ function TableRow({
         <span>{price}</span>
       </td>
       <td className="table-row--right">
-        <span>{percentageChanges[0]}%</span>
+        <span>{percentageChanges[0]}</span>
       </td>
       <td className="table-row--right">
-        <span>{percentageChanges[1]}%</span>
+        <span>{percentageChanges[1]}</span>
       </td>
       <td className="table-row--right">
-        <span>{percentageChanges[2]}%</span>
+        <span>{percentageChanges[2]}</span>
       </td>
       <td className="table-row--right">
         <span>{marketCap}</span>
@@ -48,7 +48,7 @@ function TableRow({
         <span>{ath}</span>
       </td>
       <td className="table-row--right table-row__last">
-        <span>{athPercentage}%</span>
+        <span>{athPercentage}</span>
       </td>
     </tr>
   );

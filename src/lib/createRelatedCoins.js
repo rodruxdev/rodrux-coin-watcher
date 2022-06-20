@@ -1,3 +1,5 @@
+import currencyText from './currencyText';
+
 const createRelatedCoins = (response) => {
   const relatedCoins = [];
   for (let i = 0; i < 6; i++) {
@@ -6,8 +8,8 @@ const createRelatedCoins = (response) => {
     const coinId = coin.id;
     const ticker = coin.symbol?.toUpperCase();
     const title = `${coin.name} (${ticker})`;
-    const price = `$${coin.current_price} USD`;
-    const marketCap = `$${coin.market_cap} USD`;
+    const price = currencyText(coin.current_price);
+    const marketCap = currencyText(coin.market_cap);
     const relatedCoin = {
       coinId,
       title,

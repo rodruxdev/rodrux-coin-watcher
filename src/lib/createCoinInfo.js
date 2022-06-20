@@ -1,3 +1,6 @@
+import currencyText from './currencyText';
+import percentageText from './percentageText';
+
 const createCoinInfo = (response) => {
   const coinId = response?.id;
   const name = response?.name;
@@ -21,30 +24,16 @@ const createCoinInfo = (response) => {
   ];
   const coinQuantity = response.market_data?.circulating_supply;
   const moreInfo = {
-    ath: `$${ath} USD`,
-    atl: `$${atl} USD`,
-    athPercentage: `${athPercentage?.toLocaleString('en-US', {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2,
-    })}%`,
-    atlPercentage: `${atlPercentage?.toLocaleString('en-US', {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2,
-    })}%`,
-    marketCap: `$${marketCap} USD`,
-    volume: `$${volume} USD`,
-    highDay: `$${highDay} USD`,
-    lowDay: `$${lowDay} USD`,
-    priceChange: priceChange.map((item) => {
-      if (item) {
-        return item?.toLocaleString('en-US', {
-          maximumFractionDigits: 2,
-          minimumFractionDigits: 2,
-        });
-      }
-      return '---';
-    }),
-    coinQuantity,
+    ath: currencyText(ath),
+    atl: currencyText(atl),
+    athPercentage: percentageText(athPercentage),
+    atlPercentage: percentageText(atlPercentage),
+    marketCap: currencyText(marketCap),
+    volume: currencyText(volume),
+    highDay: currencyText(highDay),
+    lowDay: currencyText(lowDay),
+    priceChange: priceChange.map((item) => percentageText(item)),
+    coinQuantity: currencyText(coinQuantity).slice(1),
   };
   const coinInfo = {
     coinId,
@@ -56,7 +45,7 @@ const createCoinInfo = (response) => {
     description,
     moreInfo,
     title: `${name} (${ticker})`,
-    priceTitle: `$${price} USD`,
+    priceTitle: `${currencyText(price)} USD`,
   };
   return coinInfo;
 };

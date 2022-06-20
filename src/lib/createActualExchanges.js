@@ -1,3 +1,4 @@
+import currencyText from './currencyText';
 import getAllExchangeImages from './getAllExchangeImages';
 
 const createActualExchanges = async (exchangeOptions) => {
@@ -11,11 +12,15 @@ const createActualExchanges = async (exchangeOptions) => {
     const { exchange, pairs } = exchangeInfo;
     const randomIndexPairs = Math.floor(Math.random() * pairs.length);
     const { pair, data } = pairs[randomIndexPairs];
+    const ending = pair.split('/')[1];
     const actualExchange = {
       exchangeId,
       exchange,
       pair,
-      data: { price: `$${data.price} USD`, volume: `$${data.volume} USD` },
+      data: {
+        price: `${currencyText(data.price)} ${ending}`,
+        volume: `${currencyText(data.volume)} ${ending}`,
+      },
     };
     actualInfo.push(actualExchange);
     exchangesIds.push(exchangeId);

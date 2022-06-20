@@ -12,6 +12,8 @@
   border-radius: 8px;
   background-color: transparent;
   position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pair_selector:focus{
