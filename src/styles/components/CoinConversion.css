@@ -13,6 +13,12 @@
   border: var(--dark-border);
 }
 
+.input-convertor__input:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--secondary);
+}
+
 @media (min-width: 600px) {
   .input-convertor {
     width: 315px;
@@ -21,5 +27,19 @@
   .input-convertor__input{
     padding-right: 20px;
     border-radius: 16px;
+  }
+}
+
+@media (min-width: 950px) {
+  .input-convertor {
+    min-width: 250px;
+    width: 70%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .input-convertor {
+    min-width: initial;
+    width: 190px;
   }
 }

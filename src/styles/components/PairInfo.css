@@ -1,5 +1,6 @@
 .pair-info {
-  width: 120px;
+  min-width: 120px;
+  width: 100%;
 }
 
 .pair-info__title {
@@ -18,11 +19,14 @@
   margin-top: 5px;
   text-align: end;
   vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 600px) {
   .pair-info {
-    width: 240px;
+    min-width: 240px;
   }
   .pair-info__title {
     padding-left: 10px;
@@ -31,5 +35,11 @@
     height: 40px;
     padding-right: 10px;
     margin-top: 10px;
+  }
+}
+
+@media (min-width: 950px){
+  .pair-info {
+    max-width: 380px;
   }
 }

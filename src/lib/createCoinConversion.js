@@ -1,9 +1,9 @@
 const createCoinConversion = (response) => {
-  const coin = response?.symbol?.toUpperCase();
+  const coin = response?.symbol?.toUpperCase() ?? 'BTC';
   const coinPrice = 1;
-  const conversion = response?.market_data?.current_price?.usd;
+  const conversion = response?.market_data?.current_price?.usd ?? NaN;
   const convertedCoin = 'USD';
-  const prices = response?.market_data?.current_price;
+  const prices = response?.market_data?.current_price ?? NaN;
   const conversionOptions = Object.keys(prices).map((item) => ({
     coin: item.toUpperCase(),
     conversionRatio: prices[item],

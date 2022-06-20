@@ -13,6 +13,8 @@
 
 .coin-title__text {
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 600px) {

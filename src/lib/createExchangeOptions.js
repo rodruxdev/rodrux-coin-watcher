@@ -1,9 +1,14 @@
+import currencyText from './currencyText';
+
 const createExchangeOptions = (response) => {
   const exchangeAllOptions = response.map((tickerInfo) => {
     const pair = `${tickerInfo.base}/${tickerInfo.target}`;
     const exchange = tickerInfo.market?.name;
     const exchangeId = tickerInfo.market?.identifier;
-    const data = { price: tickerInfo.last, volume: tickerInfo.volume };
+    const data = {
+      price: `${currencyText(tickerInfo.last)} ${tickerInfo.target}`,
+      volume: `${currencyText(tickerInfo.volume)} ${tickerInfo.target}`,
+    };
     return { pair, exchange, exchangeId, data };
   });
   const exchangeOptions = exchangeAllOptions.reduce((prev, tickerInfo) => {

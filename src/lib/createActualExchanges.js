@@ -15,7 +15,7 @@ const createActualExchanges = async (exchangeOptions) => {
       exchangeId,
       exchange,
       pair,
-      data: { price: `$${data.price} USD`, volume: `$${data.volume} USD` },
+      data,
     };
     actualInfo.push(actualExchange);
     exchangesIds.push(exchangeId);

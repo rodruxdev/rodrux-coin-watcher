@@ -9,9 +9,19 @@
   height: 100%;
   padding-left: 15px;
   border-radius: 8px;
-  border: var(--primary-border);
+  border: var(--secondary-border);
   background-color: transparent;
   position: absolute;
+}
+
+.coin-selector__selector:focus{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--dark);
+}
+
+.coin-selector__selector option {
+  background-color: var(--background);
 }
 
 .coin-selector__icon-container {

@@ -4,8 +4,8 @@ function TableHead() {
   return (
     <thead className="table-head">
       <tr>
-        <th className="table-row--center">#</th>
-        <th className="table-row--center">Coin</th>
+        <th>#</th>
+        <th className="table-row--left">Coin</th>
         <th className="table-row--right">Price</th>
         <th className="table-row--right">1h</th>
         <th className="table-row--right">24h</th>
