@@ -33,9 +33,9 @@ function CoinPage() {
   // Exchanges info and options
   const exchangesInfo = useSelector((state) => state.exchanges);
   const optionsKeys = Object.keys(exchangesInfo.exchangeOptions);
-  const exchanges = optionsKeys.map(
-    (key) => exchangesInfo.exchangeOptions[key]?.exchange
-  );
+  const exchanges = optionsKeys
+    .map((key) => exchangesInfo.exchangeOptions[key]?.exchange)
+    .sort();
   const pairsData = exchangesInfo.actualInfo.map((exchangeSelected) => {
     const key = exchangeSelected.exchangeId;
     return exchangesInfo.exchangeOptions[key]?.pairs;
