@@ -6,6 +6,7 @@ import TableRow from '@components/TableRow';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoins } from '@slices/tableSlice';
 import '@styles/pages/Home.css';
+// import LoadingTable from '../containers/LoadingTable';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);
@@ -21,6 +22,7 @@ function Home() {
         <SearchBar />
       </section>
       <section className="coins-info">
+        {/* <LoadingTable /> */}
         <CoinsTable>
           {coins.map((coin) => {
             const {
