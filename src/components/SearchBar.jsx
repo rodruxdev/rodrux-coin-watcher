@@ -3,7 +3,7 @@ import { MdSearch, MdClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import '@styles/components/SearchBar.css';
 import { setSearch } from '@slices/uiSlice';
-import { fetchSearchCoins } from '@slices/tableSlice';
+import { fetchSearchCoins, fetchCoins } from '@slices/tableSlice';
 
 function SearchBar() {
   const [searchInput, setSearchInput] = React.useState('');
@@ -30,6 +30,7 @@ function SearchBar() {
   const onClean = () => {
     if (searchInput !== '') {
       setSearchInput('');
+      dispatch(fetchCoins());
     }
   };
 

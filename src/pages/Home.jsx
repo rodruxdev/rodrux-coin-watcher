@@ -6,10 +6,11 @@ import TableRow from '@components/TableRow';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoins } from '@slices/tableSlice';
 import '@styles/pages/Home.css';
-// import LoadingTable from '../containers/LoadingTable';
+import LoadingTable from '../containers/LoadingTable';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);
+  const loading = useSelector((state) => state.ui.loadingTable);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,38 +23,41 @@ function Home() {
         <SearchBar />
       </section>
       <section className="coins-info">
-        {/* <LoadingTable /> */}
-        <CoinsTable>
-          {coins.map((coin) => {
-            const {
-              coinId,
-              coinRank,
-              name,
-              ticker,
-              image,
-              price,
-              marketCap,
-              percentageChanges,
-              ath,
-              athPercentage,
-            } = coin;
-            return (
-              <TableRow
-                coinId={coinId}
-                coinRank={coinRank}
-                name={name}
-                ticker={ticker}
-                image={image}
-                price={price}
-                marketCap={marketCap}
-                percentageChanges={percentageChanges}
-                ath={ath}
-                athPercentage={athPercentage}
-                key={`coin-${coinId}`}
-              />
-            );
-          })}
-        </CoinsTable>
+        {loading ? (
+          <LoadingTable />
+        ) : (
+          <CoinsTable>
+            {coins.map((coin) => {
+              const {
+                coinId,
+                coinRank,
+                name,
+                ticker,
+                image,
+                price,
+                marketCap,
+                percentageChanges,
+                ath,
+                athPercentage,
+              } = coin;
+              return (
+                <TableRow
+                  coinId={coinId}
+                  coinRank={coinRank}
+                  name={name}
+                  ticker={ticker}
+                  image={image}
+                  price={price}
+                  marketCap={marketCap}
+                  percentageChanges={percentageChanges}
+                  ath={ath}
+                  athPercentage={athPercentage}
+                  key={`coin-${coinId}`}
+                />
+              );
+            })}
+          </CoinsTable>
+        )}
       </section>
     </main>
   );

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   searchInput: '',
+  loadingTable: false,
 };
 
 const uiSlice = createSlice({
@@ -11,11 +12,14 @@ const uiSlice = createSlice({
     setSearch: (state, action) => {
       state.searchInput = action.payload;
     },
+    toggleTableLoading: (state) => {
+      state.loadingTable = !state.loadingTable;
+    },
   },
 });
 
-const { setSearch } = uiSlice.actions;
+const { setSearch, toggleTableLoading } = uiSlice.actions;
 
-export { setSearch };
+export { setSearch, toggleTableLoading };
 
 export default uiSlice.reducer;
