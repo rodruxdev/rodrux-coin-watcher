@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '@slices/coinSlice';
 import { useParams } from 'react-router-dom';
 import '@styles/pages/CoinPage.css';
+// import LoadingPairInfo from '../components/LoadingPairInfo';
 
 function CoinPage() {
   const { id } = useParams();
@@ -165,6 +166,8 @@ function CoinPage() {
           >
             <CoinTitle title={relatedCoin?.title} image={relatedCoin?.image} />
             <div>
+              {/* <LoadingPairInfo />
+              <LoadingPairInfo /> */}
               <PairInfo title="Price">{relatedCoin?.price}</PairInfo>
               <PairInfo title="Market Cap">{relatedCoin?.marketCap}</PairInfo>
             </div>
