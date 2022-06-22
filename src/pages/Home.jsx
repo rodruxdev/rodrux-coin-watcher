@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoins } from '@slices/tableSlice';
 import '@styles/pages/Home.css';
 import LoadingTable from '../containers/LoadingTable';
+// import ErrorMessage from '../containers/ErrorMessage';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);
@@ -23,6 +24,7 @@ function Home() {
         <SearchBar />
       </section>
       <section className="coins-info">
+        {/* <ErrorMessage /> */}
         {loading ? (
           <LoadingTable />
         ) : (

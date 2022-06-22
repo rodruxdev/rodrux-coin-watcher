@@ -22,24 +22,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '@slices/coinSlice';
 import { useParams } from 'react-router-dom';
 import '@styles/pages/CoinPage.css';
+// import ErrorMessage from '../containers/ErrorMessage';
 
 function CoinPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { loadingCoinInfo, loadingExchanges, loadingRelatedCoins } =
     useSelector((state) => state.ui);
-  console.log(
-    '🚀 ~ file: CoinPage.jsx ~ line 30 ~ CoinPage ~ loadingRelatedCoins',
-    loadingRelatedCoins
-  );
-  console.log(
-    '🚀 ~ file: CoinPage.jsx ~ line 30 ~ CoinPage ~ loadingExchanges',
-    loadingExchanges
-  );
-  console.log(
-    '🚀 ~ file: CoinPage.jsx ~ line 30 ~ CoinPage ~ loadingCoinInfo',
-    loadingCoinInfo
-  );
   const coinInfo = useSelector((state) => state.coin.coinInfo);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
   const convertorInfo = useSelector((state) => state.convertor.coinConversion);
@@ -79,6 +68,7 @@ function CoinPage() {
         <SearchBar />
       </section>
       <section>
+        {/* <ErrorMessage /> */}
         <div className="coin-info">
           <div>
             {loadingCoinInfo ? (
