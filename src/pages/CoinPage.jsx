@@ -14,11 +14,13 @@ import PairInfo from '@components/PairInfo';
 import RelatedCoins from '@containers/RelatedCoins';
 import CoinTitle from '@components/CoinTitle';
 import CoinCard from '@containers/CoinCard';
-import '@styles/pages/CoinPage.css';
+import CoinSelected from '@components/CoinSelected';
+// import LoadingMoreInfo from '@containers/LoadingMoreInfo';
+// import LoadingDescription from '@containers/LoadingDescription';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '@slices/coinSlice';
 import { useParams } from 'react-router-dom';
-import CoinSelected from '../components/CoinSelected';
+import '@styles/pages/CoinPage.css';
 
 function CoinPage() {
   const { id } = useParams();
@@ -68,9 +70,11 @@ function CoinPage() {
               {coinInfo.priceTitle}
             </CoinPrice>
             <CoinDescription>{coinInfo.description}</CoinDescription>
+            {/* <LoadingDescription /> */}
           </div>
           <div className="coin-info__container">
             <h4>More Information</h4>
+            {/* <LoadingMoreInfo /> */}
             <CoinMoreInfo title="ATH">{coinInfo.moreInfo?.ath}</CoinMoreInfo>
             <CoinMoreInfo title="ATL">{coinInfo.moreInfo?.atl}</CoinMoreInfo>
             <CoinMoreInfo title="ATH Percentage Change">

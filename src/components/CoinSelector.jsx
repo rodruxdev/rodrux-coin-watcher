@@ -15,6 +15,9 @@ function CoinSelector({ options, selectedValue }) {
       <label htmlFor="coin" className="coin-selector__icon-container">
         <MdKeyboardArrowDown className="coin-selector__icon" />
       </label>
+      {/* <div className="coin-selector__loading-container">
+        <div className="coin-selector__loading  loading" />
+      </div> */}
       <select
         name="Coin"
         id="coin"

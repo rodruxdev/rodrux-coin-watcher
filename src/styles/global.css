@@ -61,7 +61,7 @@ img,
 picture {
   max-width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -124,18 +124,37 @@ select {
   color: var(--black);
 }
 
+.loading {
+  background-color: var(--black);
+  opacity: 0.6;
+  animation: blink 1.5s infinite linear;
+}
+
+@keyframes blink {
+  0%{
+    opacity: 0.2;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 0.2;
+  }
+
+}
+
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
   }
-  /* *,
+  *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  } */
+  }
 }
 
 @media (min-width: 600px) {

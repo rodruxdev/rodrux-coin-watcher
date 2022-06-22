@@ -25,6 +25,9 @@ function CoinConversion({ type }) {
   }, [conversionState?.convertedCoin]);
   return (
     <div className="input-convertor">
+      {/* <div className="input-convertor__loading-container">
+        <div className="input-convertor__loading  loading" />
+      </div> */}
       <input
         type="number"
         min="0"

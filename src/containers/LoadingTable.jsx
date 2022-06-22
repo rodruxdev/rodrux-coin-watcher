@@ -6,17 +6,17 @@ function LoadingTable() {
   return (
     <div className="loading-table">
       <div className="loading-table__header">
-        <div className="loading-table__text" />
-        <div className="loading-table__text" />
-        <div className="loading-table__text" />
-        <div className="loading-table__text" />
+        <div className="loading-table__text loading" />
+        <div className="loading-table__text loading" />
+        <div className="loading-table__text loading" />
+        <div className="loading-table__text loading" />
       </div>
       {[...Array(19)].map((_, index) => (
         <div className="loading-table__row" key={`loading-table-${index}`}>
-          <div className="loading-table__text" />
-          <div className="loading-table__text" />
-          <div className="loading-table__text" />
-          <div className="loading-table__text" />
+          <div className="loading-table__text loading" />
+          <div className="loading-table__text loading" />
+          <div className="loading-table__text loading" />
+          <div className="loading-table__text loading" />
         </div>
       ))}
     </div>

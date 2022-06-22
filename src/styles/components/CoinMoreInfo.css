@@ -4,9 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.info:nth-child(2n) {
   border-bottom: var(--primary-border);
 }
 
