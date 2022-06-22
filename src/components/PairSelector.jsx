@@ -4,7 +4,7 @@ import '@styles/components/PairSelector.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPair } from '@slices/exchangesSlice';
 
-function PairSelector({ options, selectedPair, index }) {
+function PairSelector({ options, selectedPair, loading, index }) {
   const exchangeId = useSelector(
     (state) => state.exchanges.actualInfo[index]?.exchangeId
   );
@@ -21,26 +21,29 @@ function PairSelector({ options, selectedPair, index }) {
   };
   return (
     <div className="pair">
-      {/* <div className="pair__loading-container">
-        <div className="pair__loading  loading" />
-      </div> */}
       <label htmlFor="coin" className="pair__icon-container">
         <MdKeyboardArrowDown className="pair__icon" />
       </label>
-      <select
-        name="pair"
-        id="pair"
-        className="pair__selector"
-        aria-label="pair selector"
-        value={selectedPair}
-        onChange={pairChangeHandle}
-      >
-        {options.map((opt) => (
-          <option value={opt} key={`pair-${opt}`}>
-            {opt}
-          </option>
-        ))}
-      </select>
+      {loading ? (
+        <div className="pair__loading-container">
+          <div className="pair__loading  loading" />
+        </div>
+      ) : (
+        <select
+          name="pair"
+          id="pair"
+          className="pair__selector"
+          aria-label="pair selector"
+          value={selectedPair}
+          onChange={pairChangeHandle}
+        >
+          {options.map((opt) => (
+            <option value={opt} key={`pair-${opt}`}>
+              {opt}
+            </option>
+          ))}
+        </select>
+      )}
     </div>
   );
 }

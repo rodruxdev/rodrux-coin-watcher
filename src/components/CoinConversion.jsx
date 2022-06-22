@@ -10,6 +10,7 @@ function CoinConversion({ type }) {
   );
   const value =
     type === 'main' ? conversionState?.coinPrice : conversionState?.conversion;
+  const loading = useSelector((state) => state.ui.loadingCoinInfo);
   const dispatch = useDispatch();
 
   const conversionHandler = (event) => {
@@ -25,17 +26,20 @@ function CoinConversion({ type }) {
   }, [conversionState?.convertedCoin]);
   return (
     <div className="input-convertor">
-      {/* <div className="input-convertor__loading-container">
-        <div className="input-convertor__loading  loading" />
-      </div> */}
-      <input
-        type="number"
-        min="0"
-        value={value ?? ''}
-        className="input-convertor__input"
-        aria-label="coin convertor"
-        onChange={conversionHandler}
-      />
+      {loading ? (
+        <div className="input-convertor__loading-container">
+          <div className="input-convertor__loading  loading" />
+        </div>
+      ) : (
+        <input
+          type="number"
+          min="0"
+          value={value ?? ''}
+          className="input-convertor__input"
+          aria-label="coin convertor"
+          onChange={conversionHandler}
+        />
+      )}
     </div>
   );
 }

@@ -15,17 +15,31 @@ import RelatedCoins from '@containers/RelatedCoins';
 import CoinTitle from '@components/CoinTitle';
 import CoinCard from '@containers/CoinCard';
 import CoinSelected from '@components/CoinSelected';
-// import LoadingMoreInfo from '@containers/LoadingMoreInfo';
-// import LoadingDescription from '@containers/LoadingDescription';
+import LoadingMoreInfo from '@containers/LoadingMoreInfo';
+import LoadingDescription from '@containers/LoadingDescription';
+import LoadingPairInfo from '@components/LoadingPairInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '@slices/coinSlice';
 import { useParams } from 'react-router-dom';
 import '@styles/pages/CoinPage.css';
-// import LoadingPairInfo from '../components/LoadingPairInfo';
 
 function CoinPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const { loadingCoinInfo, loadingExchanges, loadingRelatedCoins } =
+    useSelector((state) => state.ui);
+  console.log(
+    '🚀 ~ file: CoinPage.jsx ~ line 30 ~ CoinPage ~ loadingRelatedCoins',
+    loadingRelatedCoins
+  );
+  console.log(
+    '🚀 ~ file: CoinPage.jsx ~ line 30 ~ CoinPage ~ loadingExchanges',
+    loadingExchanges
+  );
+  console.log(
+    '🚀 ~ file: CoinPage.jsx ~ line 30 ~ CoinPage ~ loadingCoinInfo',
+    loadingCoinInfo
+  );
   const coinInfo = useSelector((state) => state.coin.coinInfo);
   const relatedCoins = useSelector((state) => state.relatedCoins.coins);
   const convertorInfo = useSelector((state) => state.convertor.coinConversion);
@@ -67,47 +81,61 @@ function CoinPage() {
       <section>
         <div className="coin-info">
           <div>
-            <CoinPrice title={coinInfo.title} image={coinInfo.image}>
-              {coinInfo.priceTitle}
-            </CoinPrice>
-            <CoinDescription>{coinInfo.description}</CoinDescription>
-            {/* <LoadingDescription /> */}
+            {loadingCoinInfo ? (
+              <LoadingDescription />
+            ) : (
+              <>
+                <CoinPrice title={coinInfo.title} image={coinInfo.image}>
+                  {coinInfo.priceTitle}
+                </CoinPrice>
+                <CoinDescription>{coinInfo.description}</CoinDescription>
+              </>
+            )}
           </div>
           <div className="coin-info__container">
             <h4>More Information</h4>
-            {/* <LoadingMoreInfo /> */}
-            <CoinMoreInfo title="ATH">{coinInfo.moreInfo?.ath}</CoinMoreInfo>
-            <CoinMoreInfo title="ATL">{coinInfo.moreInfo?.atl}</CoinMoreInfo>
-            <CoinMoreInfo title="ATH Percentage Change">
-              {coinInfo.moreInfo?.athPercentage}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="ATL Percentage Change">
-              {coinInfo.moreInfo?.atlPercentage}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="Market Capitalization">
-              {coinInfo.moreInfo?.marketCap}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="Volume">
-              {coinInfo.moreInfo?.volume}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="24h High">
-              {coinInfo.moreInfo?.highDay}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="24h Low">
-              {coinInfo.moreInfo?.lowDay}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="1h Percentage Change">
-              {coinInfo.moreInfo?.priceChange[0]}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="24h Percentage Change">
-              {coinInfo.moreInfo?.priceChange[1]}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="7h Percentage Change">
-              {coinInfo.moreInfo?.priceChange[2]}
-            </CoinMoreInfo>
-            <CoinMoreInfo title="Coin Quantity">
-              {coinInfo.moreInfo?.coinQuantity}
-            </CoinMoreInfo>
+            {loadingCoinInfo ? (
+              <LoadingMoreInfo />
+            ) : (
+              <>
+                <CoinMoreInfo title="ATH">
+                  {coinInfo.moreInfo?.ath}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="ATL">
+                  {coinInfo.moreInfo?.atl}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="ATH Percentage Change">
+                  {coinInfo.moreInfo?.athPercentage}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="ATL Percentage Change">
+                  {coinInfo.moreInfo?.atlPercentage}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="Market Capitalization">
+                  {coinInfo.moreInfo?.marketCap}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="Volume">
+                  {coinInfo.moreInfo?.volume}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="24h High">
+                  {coinInfo.moreInfo?.highDay}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="24h Low">
+                  {coinInfo.moreInfo?.lowDay}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="1h Percentage Change">
+                  {coinInfo.moreInfo?.priceChange[0]}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="24h Percentage Change">
+                  {coinInfo.moreInfo?.priceChange[1]}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="7h Percentage Change">
+                  {coinInfo.moreInfo?.priceChange[2]}
+                </CoinMoreInfo>
+                <CoinMoreInfo title="Coin Quantity">
+                  {coinInfo.moreInfo?.coinQuantity}
+                </CoinMoreInfo>
+              </>
+            )}
           </div>
           <div className="coin-convertor">
             <div className="coin-convertor__container">
@@ -131,27 +159,39 @@ function CoinPage() {
               <ExchangePair
                 image={actualExchange.image}
                 exchange={actualExchange.exchange}
+                loading={loadingExchanges[index]}
                 key={`exchange-${index}`}
               >
                 <div className="exchange-info__container">
                   <ExchangeSelector
                     options={exchanges}
                     selectedExchange={actualExchange.exchange}
+                    loading={loadingExchanges[index]}
                     index={index}
                   />
                   <PairSelector
                     options={pairs[index]}
                     selectedPair={actualExchange.pair}
+                    loading={loadingExchanges[index]}
                     index={index}
                   />
                 </div>
                 <div className="exchange-info__container exchange-info__info">
-                  <PairInfo title="Price">
-                    {actualExchange.data?.price}
-                  </PairInfo>
-                  <PairInfo title="Volume">
-                    {actualExchange.data?.volume}
-                  </PairInfo>
+                  {loadingExchanges[index] ? (
+                    <>
+                      <LoadingPairInfo />
+                      <LoadingPairInfo />
+                    </>
+                  ) : (
+                    <>
+                      <PairInfo title="Price">
+                        {actualExchange.data?.price}
+                      </PairInfo>
+                      <PairInfo title="Volume">
+                        {actualExchange.data?.volume}
+                      </PairInfo>
+                    </>
+                  )}
                 </div>
               </ExchangePair>
             ))}
@@ -166,10 +206,19 @@ function CoinPage() {
           >
             <CoinTitle title={relatedCoin?.title} image={relatedCoin?.image} />
             <div>
-              {/* <LoadingPairInfo />
-              <LoadingPairInfo /> */}
-              <PairInfo title="Price">{relatedCoin?.price}</PairInfo>
-              <PairInfo title="Market Cap">{relatedCoin?.marketCap}</PairInfo>
+              {loadingRelatedCoins ? (
+                <>
+                  <LoadingPairInfo />
+                  <LoadingPairInfo />
+                </>
+              ) : (
+                <>
+                  <PairInfo title="Price">{relatedCoin?.price}</PairInfo>
+                  <PairInfo title="Market Cap">
+                    {relatedCoin?.marketCap}
+                  </PairInfo>
+                </>
+              )}
             </div>
           </CoinCard>
         ))}

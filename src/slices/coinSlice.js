@@ -5,6 +5,12 @@ import createCoinInfo from '../lib/createCoinInfo';
 import { setCoinToConvert } from './convertorSlice';
 import { fetchExchangeImages, setExchangeOptions } from './exchangesSlice';
 import { fetchRelatedCoins } from './relatedCoinsSlice';
+import {
+  startLoadingCoin,
+  toggleLoadingCoinInfo,
+  toggleLoadingExchanges,
+  toggleLoadingRelatedCoins,
+} from './uiSlice';
 
 const initialState = {
   coinInfo: {},
@@ -14,13 +20,17 @@ export const fetchCoin = createAsyncThunk(
   'coin/fetchCoin',
   async (id, { dispatch }) => {
     try {
+      dispatch(startLoadingCoin());
       const response = await getCoin(id);
       const coinInfo = createCoinInfo(response);
       dispatch(setCoin(coinInfo));
       dispatch(setCoinToConvert(response));
+      dispatch(toggleLoadingCoinInfo());
       dispatch(setExchangeOptions(response.tickers));
       dispatch(fetchExchangeImages());
+      dispatch(toggleLoadingExchanges());
       dispatch(fetchRelatedCoins(response.categories));
+      dispatch(toggleLoadingRelatedCoins());
     } catch (err) {
       console.log(err, 'Error on fetching coin');
     }
