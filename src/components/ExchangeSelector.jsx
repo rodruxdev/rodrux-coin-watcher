@@ -16,6 +16,7 @@ function ExchangeSelector({ options, selectedExchange, index }) {
   };
 
   return (
+    // Add loading class when loading
     <select
       name="exchange"
       id="exchange"

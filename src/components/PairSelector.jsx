@@ -21,13 +21,16 @@ function PairSelector({ options, selectedPair, index }) {
   };
   return (
     <div className="pair">
+      {/* <div className="pair__loading-container">
+        <div className="pair__loading  loading" />
+      </div> */}
       <label htmlFor="coin" className="pair__icon-container">
         <MdKeyboardArrowDown className="pair__icon" />
       </label>
       <select
         name="pair"
         id="pair"
-        className="pair_selector"
+        className="pair__selector"
         aria-label="pair selector"
         value={selectedPair}
         onChange={pairChangeHandle}

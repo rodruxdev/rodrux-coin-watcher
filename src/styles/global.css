@@ -114,7 +114,8 @@ select {
   appearance:none;
 }
 
-.blue-box {
+.blue-box,
+.blue-box.loading {
   background-color: var(--primary);
   color: var(--background);
 }
