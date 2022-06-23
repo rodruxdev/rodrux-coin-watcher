@@ -8,6 +8,7 @@ import LoadingTable from '@containers/LoadingTable';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoins } from '@slices/tableSlice';
 import '@styles/pages/Home.css';
+import { cleanError } from '../slices/uiSlice';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);
@@ -15,6 +16,9 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (error.section) {
+      dispatch(cleanError());
+    }
     dispatch(fetchCoins());
   }, []);
   return (

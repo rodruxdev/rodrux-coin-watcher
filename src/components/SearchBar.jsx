@@ -1,18 +1,22 @@
 import React from 'react';
 import { MdSearch, MdClose } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '@styles/components/SearchBar.css';
 import { setSearch } from '@slices/uiSlice';
 import { fetchSearchCoins, fetchCoins } from '@slices/tableSlice';
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
-  const [searchInput, setSearchInput] = React.useState('');
+  const navigate = useNavigate();
+  const stateSearchInput = useSelector((state) => state.ui.searchInput);
+  const [searchInput, setSearchInput] = React.useState(stateSearchInput);
   const dispatch = useDispatch();
 
   const handleSearch = (event) => {
     if (event?.key === 'Enter') {
       if (searchInput !== '') {
         dispatch(setSearch(searchInput));
+        navigate('/');
         dispatch(fetchSearchCoins(searchInput));
       }
     }
