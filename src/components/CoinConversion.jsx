@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import '@styles/components/CoinConversion.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPriceConversion } from '@slices/convertorSlice';
-import convertCoins from '../lib/convertCoin';
+import convertCoins from '@lib/convertCoin';
 
 function CoinConversion({ type }) {
   const conversionState = useSelector(

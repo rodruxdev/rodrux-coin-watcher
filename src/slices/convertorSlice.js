@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import createCoinConversion from '../lib/createCoinConversion';
+import createCoinConversion from '@lib/createCoinConversion';
 
 const initialState = {
   coinConversion: {},

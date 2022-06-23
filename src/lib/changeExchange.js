@@ -1,4 +1,4 @@
-import getImageExchange from '../api/getImageExchange';
+import getImageExchange from '@api/getImageExchange';
 
 const changeExchange = async (exchangeOptions, exchange) => {
   const exchangeId = Object.keys(exchangeOptions).find(

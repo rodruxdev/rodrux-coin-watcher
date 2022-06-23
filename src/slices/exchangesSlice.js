@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import createActualExchanges from '../lib/createActualExchanges';
-import createExchangeOptions from '../lib/createExchangeOptions';
+import createActualExchanges from '@lib/createActualExchanges';
+import createExchangeOptions from '@lib/createExchangeOptions';
 import { setError } from './uiSlice';
 
 const initialState = {

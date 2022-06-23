@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import CoingeckoMention from '../../components/CoingeckoMention';
+import CoingeckoMention from '@components/CoingeckoMention';
 
 describe('CoingeckoMention Tests', () => {
   test('renders content', () => {

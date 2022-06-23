@@ -1,8 +1,8 @@
 /* eslint-disable no-use-before-define */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import getCategoriesList from '../api/getCategoriesList';
-import getCoins from '../api/getCoins';
-import createRelatedCoins from '../lib/createRelatedCoins';
+import getCategoriesList from '@api/getCategoriesList';
+import getCoins from '@api/getCoins';
+import createRelatedCoins from '@lib/createRelatedCoins';
 import { setError } from './uiSlice';
 
 const initialState = {

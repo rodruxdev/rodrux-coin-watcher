@@ -7,8 +7,8 @@ import ErrorMessage from '@containers/ErrorMessage';
 import LoadingTable from '@containers/LoadingTable';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoins } from '@slices/tableSlice';
+import { cleanError } from '@slices/uiSlice';
 import '@styles/pages/Home.css';
-import { cleanError } from '../slices/uiSlice';
 
 function Home() {
   const coins = useSelector((state) => state.table.coins);

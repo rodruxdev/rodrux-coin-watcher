@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
+import SocialButton from '@components/SocialButton';
 import { render } from '@testing-library/react';
-import SocialButton from '../../components/SocialButton';
 
 describe('SocialButton Tests', () => {
   test('renders empty button content', () => {

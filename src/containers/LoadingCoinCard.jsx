@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingPairInfo from '../components/LoadingPairInfo';
+import LoadingPairInfo from '@components/LoadingPairInfo';
 
 function LoadingCoinCard() {
   return (

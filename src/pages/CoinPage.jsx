@@ -22,8 +22,8 @@ import ErrorMessage from '@containers/ErrorMessage';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '@slices/coinSlice';
 import { useParams } from 'react-router-dom';
+import { cleanError } from '@slices/uiSlice';
 import '@styles/pages/CoinPage.css';
-import { cleanError } from '../slices/uiSlice';
 
 function CoinPage() {
   const { id } = useParams();

@@ -3,7 +3,7 @@ import '@styles/components/ExchangeSelector.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setExchange } from '@slices/exchangesSlice';
 import changeExchange from '@lib/changeExchange';
-import { setError, toggleLoadingExchange } from '../slices/uiSlice';
+import { setError, toggleLoadingExchange } from '@slices/uiSlice';
 
 function ExchangeSelector({ options, selectedExchange, loading, index }) {
   const exchangeOptions = useSelector(

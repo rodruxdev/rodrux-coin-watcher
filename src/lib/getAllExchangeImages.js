@@ -1,4 +1,4 @@
-import getImageExchange from '../api/getImageExchange';
+import getImageExchange from '@api/getImageExchange';
 
 const getAllExchangeImages = async (ids) => {
   const results = ids.map((id) => getImageExchange(id));
