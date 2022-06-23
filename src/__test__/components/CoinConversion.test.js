@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
 import CoinConversion from '@components/CoinConversion';
+import { render } from '../mocks/test-utils';
 
 describe('CoinConversion Tests', () => {
   test('renders content', () => {

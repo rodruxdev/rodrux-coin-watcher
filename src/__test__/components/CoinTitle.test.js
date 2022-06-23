@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render } from '@testing-library/react';
 import CoinTitle from '@components/CoinTitle';
+import { fireEvent, render } from '../mocks/test-utils';
 
 describe('CoinTitle Tests', () => {
   test('renders content', () => {

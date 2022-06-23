@@ -3,6 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import CoinsTable from '@containers/CoinsTable';
 import TableRow from '@components/TableRow';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('CoinsTable Tests', () => {
   const coin = {
@@ -18,18 +19,21 @@ describe('CoinsTable Tests', () => {
   };
   test('renders content', () => {
     const container = render(
-      <CoinsTable>
-        <TableRow
-          coinId={coin.coinId}
-          name={coin.name}
-          ticker={coin.ticker}
-          price={coin.price}
-          marketCap={coin.marketCap}
-          percentageChanges={coin.percentageChanges}
-          ath={coin.ath}
-          athPercentage={coin.athPercentage}
-        />
-      </CoinsTable>
+      <BrowserRouter>
+        <CoinsTable>
+          <TableRow
+            coinId={coin.coinId}
+            coinRank={coin.coinId}
+            name={coin.name}
+            ticker={coin.ticker}
+            price={coin.price}
+            marketCap={coin.marketCap}
+            percentageChanges={coin.percentageChanges}
+            ath={coin.ath}
+            athPercentage={coin.athPercentage}
+          />
+        </CoinsTable>
+      </BrowserRouter>
     );
     container.getByText('#');
     container.getByText('Coin');
@@ -42,7 +46,7 @@ describe('CoinsTable Tests', () => {
     container.getByText('ATH Change');
     container.getByText(coin.coinId);
     container.getByText(coin.name);
-    container.getByText(`$${coin.price}`);
-    container.getByText(`$${coin.ath}`);
+    container.getByText(coin.price);
+    container.getByText(coin.ath);
   });
 });
