@@ -4,7 +4,7 @@ import getCoins from '@api/getCoins';
 import searchCoins from '@api/searchCoins';
 import createCoinsList from '@lib/createCoinsList';
 import getSearchedCoinsIds from '@lib/getSearchedCoinsIds';
-import { toggleLoadingTable } from './uiSlice';
+import { setError, toggleLoadingTable } from './uiSlice';
 
 const initialState = {
   coins: [],
@@ -19,10 +19,15 @@ export const fetchCoins = createAsyncThunk(
       const response = await getCoins(limit, { searchIds });
       const coinsList = createCoinsList(response);
       dispatch(setCoins(coinsList));
-      dispatch(toggleLoadingTable());
     } catch (err) {
-      console.log(err, 'Error on fetching coins');
+      const error = {
+        message: 'Error fetching coins data',
+        error: err,
+        section: 'table',
+      };
+      dispatch(setError(error));
     }
+    dispatch(toggleLoadingTable());
   }
 );
 
@@ -34,10 +39,15 @@ export const fetchSearchCoins = createAsyncThunk(
       const response = await searchCoins(search);
       const searchIds = getSearchedCoinsIds(response);
       dispatch(fetchCoins(searchIds));
-      dispatch(toggleLoadingTable());
     } catch (err) {
-      console.log(err, 'Error on fetching search');
+      const error = {
+        message: 'Error fetching search of coins',
+        error: err,
+        section: 'table',
+      };
+      dispatch(setError(error));
     }
+    dispatch(toggleLoadingTable());
   }
 );
 

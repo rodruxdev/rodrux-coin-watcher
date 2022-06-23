@@ -6,6 +6,7 @@ import { setCoinToConvert } from './convertorSlice';
 import { fetchExchangeImages, setExchangeOptions } from './exchangesSlice';
 import { fetchRelatedCoins } from './relatedCoinsSlice';
 import {
+  setError,
   startLoadingCoin,
   toggleLoadingCoinInfo,
   toggleLoadingExchanges,
@@ -32,7 +33,12 @@ export const fetchCoin = createAsyncThunk(
       dispatch(fetchRelatedCoins(response.categories));
       dispatch(toggleLoadingRelatedCoins());
     } catch (err) {
-      console.log(err, 'Error on fetching coin');
+      const error = {
+        message: 'Error fetching coin data',
+        error: err,
+        section: 'coin-info',
+      };
+      dispatch(setError(error));
     }
   }
 );

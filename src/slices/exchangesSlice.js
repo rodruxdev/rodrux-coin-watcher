@@ -2,6 +2,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import createActualExchanges from '../lib/createActualExchanges';
 import createExchangeOptions from '../lib/createExchangeOptions';
+import { setError } from './uiSlice';
 
 const initialState = {
   actualInfo: [],
@@ -16,7 +17,12 @@ export const fetchExchangeImages = createAsyncThunk(
       const response = await createActualExchanges(exchangeOptions);
       dispatch(setActualExchanges(response));
     } catch (err) {
-      console.log(err, 'Error on fetching coin');
+      const error = {
+        message: 'Error fetching exchange data',
+        error: err,
+        section: 'exchange',
+      };
+      dispatch(setError(error));
     }
   }
 );

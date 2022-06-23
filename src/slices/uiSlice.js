@@ -6,6 +6,7 @@ const initialState = {
   loadingCoinInfo: false,
   loadingExchanges: [false, false, false],
   loadingRelatedCoins: false,
+  error: { message: '', error: null, section: '' },
 };
 
 const uiSlice = createSlice({
@@ -36,6 +37,12 @@ const uiSlice = createSlice({
       const index = action.payload;
       state.loadingExchanges[index] = !state.loadingExchanges[index];
     },
+    setError: (state, action) => {
+      state.error = action.payload;
+    },
+    cleanError: (state) => {
+      state.error = { message: '', error: null, section: '' };
+    },
   },
 });
 
@@ -47,6 +54,8 @@ const {
   toggleLoadingRelatedCoins,
   toggleLoadingExchanges,
   toggleLoadingExchange,
+  setError,
+  cleanError,
 } = uiSlice.actions;
 
 export {
@@ -57,6 +66,8 @@ export {
   toggleLoadingRelatedCoins,
   toggleLoadingExchanges,
   toggleLoadingExchange,
+  setError,
+  cleanError,
 };
 
 export default uiSlice.reducer;

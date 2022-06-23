@@ -3,7 +3,7 @@ import '@styles/components/ExchangeSelector.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setExchange } from '@slices/exchangesSlice';
 import changeExchange from '@lib/changeExchange';
-import { toggleLoadingExchange } from '../slices/uiSlice';
+import { setError, toggleLoadingExchange } from '../slices/uiSlice';
 
 function ExchangeSelector({ options, selectedExchange, loading, index }) {
   const exchangeOptions = useSelector(
@@ -12,10 +12,19 @@ function ExchangeSelector({ options, selectedExchange, loading, index }) {
   const dispatch = useDispatch();
   const changeExchangeHandle = async (event) => {
     const { value } = event.target;
-    dispatch(toggleLoadingExchange(index));
-    const newExchange = await changeExchange(exchangeOptions, value);
-    dispatch(setExchange({ newExchange, index }));
-    dispatch(toggleLoadingExchange(index));
+    try {
+      dispatch(toggleLoadingExchange(index));
+      const newExchange = await changeExchange(exchangeOptions, value);
+      dispatch(setExchange({ newExchange, index }));
+      dispatch(toggleLoadingExchange(index));
+    } catch (err) {
+      const error = {
+        message: 'Error fetching exchange data',
+        error: err,
+        section: 'exchange',
+      };
+      dispatch(setError(error));
+    }
   };
 
   return (
