@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import getCategoriesList from '../api/getCategoriesList';
 import getCoins from '../api/getCoins';
 import createRelatedCoins from '../lib/createRelatedCoins';
+import { setError } from './uiSlice';
 
 const initialState = {
   coins: [],
@@ -23,7 +24,12 @@ export const fetchRelatedCoins = createAsyncThunk(
       const relatedCoins = createRelatedCoins(response);
       dispatch(setRelatedCoins(relatedCoins));
     } catch (err) {
-      console.log(err, 'Error on fetching coin');
+      const error = {
+        message: 'Error fetching related coins data',
+        error: err,
+        section: 'related-coins',
+      };
+      dispatch(setError(error));
     }
   }
 );

@@ -5,6 +5,7 @@ import coinSlice from '@slices/coinSlice';
 import convertorSlice from '@slices/convertorSlice';
 import relatedCoinsSlice from '@slices/relatedCoinsSlice';
 import exchangesSlice from '@slices/exchangesSlice';
+import reportError from '../middlewares';
 
 const store = configureStore({
   reducer: {
@@ -15,6 +16,8 @@ const store = configureStore({
     relatedCoins: relatedCoinsSlice,
     exchanges: exchangesSlice,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(reportError),
 });
 
 export default store;

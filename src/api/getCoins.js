@@ -14,8 +14,7 @@ const getCoins = (limit = 100, options = {}) => {
   }
   const response = axios
     .get('coins/markets', { params })
-    .then((res) => res.data)
-    .catch((error) => error);
+    .then((res) => res.data);
   return response;
 };
 

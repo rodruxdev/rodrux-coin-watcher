@@ -6,8 +6,8 @@ const createExchangeOptions = (response) => {
     const exchange = tickerInfo.market?.name;
     const exchangeId = tickerInfo.market?.identifier;
     const data = {
-      price: `${currencyText(tickerInfo.last)} ${tickerInfo.target}`,
-      volume: `${currencyText(tickerInfo.volume)} ${tickerInfo.target}`,
+      price: `${currencyText(tickerInfo.last, 6)} ${tickerInfo.target}`,
+      volume: `${currencyText(tickerInfo.volume, 2)} ${tickerInfo.target}`,
     };
     return { pair, exchange, exchangeId, data };
   });

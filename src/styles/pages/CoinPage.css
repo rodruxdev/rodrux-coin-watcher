@@ -1,9 +1,13 @@
 .coin-page {
-  width: 100vw;
+  width: 96vw;
   max-width: 1745px;
   margin-inline: auto;
   padding: 2vw;
   scroll-behavior: smooth;
+}
+
+.coin-error{
+  height: 75vh;
 }
 
 .search {
@@ -45,6 +49,9 @@
 }
 
 @media (min-width: 950px) {
+  .coin-error {
+    height: 70vh;
+  }
   .coin-info{
     margin-bottom: 20px;
     display: grid;

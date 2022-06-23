@@ -4,7 +4,8 @@
   position: relative;
 }
 
-.coin-selector__selector {
+.coin-selector__selector,
+.coin-selector__loading-container {
   width: 100%;
   height: 100%;
   padding-left: 15px;
@@ -12,6 +13,16 @@
   border: var(--secondary-border);
   background-color: transparent;
   position: absolute;
+}
+
+.coin-selector__loading-container {
+  display: flex;
+  align-items: center;
+}
+
+.coin-selector__loading {
+  width: 45%;
+  height: 21px;
 }
 
 .coin-selector__selector:focus{
@@ -44,7 +55,8 @@
     width: 135px;
     height: 75px;
   }
-  .coin-selector__selector{
+  .coin-selector__selector,
+  .coin-selector__loading-container {
     border-radius: 14px;
   }
   .coin-selector__icon-container {
@@ -53,5 +65,8 @@
     top: 24px;
     bottom: 24px;
     right: 11px;
+  }
+  .coin-selector__loading {
+    height: 26px;
   }
 }
