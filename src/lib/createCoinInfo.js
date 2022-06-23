@@ -7,7 +7,8 @@ const createCoinInfo = (response) => {
   const ticker = response?.symbol.toUpperCase();
   const price = response?.market_data?.current_price?.usd ?? NaN;
   const image = response?.image?.thumb ?? '';
-  const description = response?.description?.en ?? 'No description';
+  const description =
+    response?.description?.en || `There is no available description of ${name}`;
   const categories = response?.categories ?? ['Cryptocurrency'];
   const ath = response?.market_data?.ath?.usd ?? NaN;
   const atl = response?.market_data?.atl?.usd ?? NaN;
