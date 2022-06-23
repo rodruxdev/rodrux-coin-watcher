@@ -3,10 +3,18 @@
     "airbnb",
     "prettier"
   ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
   "plugins": [
     "prettier"
   ],
   "rules": {
+    "import/no-unresolved": [
+      0
+    ],
+    "no-param-reassign": [2, { "props": false }],
     "react/jsx-filename-extension": [
       1,
       {
@@ -16,13 +24,24 @@
         ]
       }
     ],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "react/prop-types": 0,
     "no-underscore-dangle": 0,
     "import/imports-first": [
       "error",
       "absolute-first"
     ],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "error",
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+    "jsx-a11y/label-has-for": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }]
   },
   "globals": {
     "window": true,

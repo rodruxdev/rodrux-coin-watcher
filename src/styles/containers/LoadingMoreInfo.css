@@ -1,0 +1,27 @@
+.loading-info {
+  width: 100%;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--primary-border);
+}
+
+.loading-info:nth-child(2n + 1) {
+  border-bottom: var(--secondary-border);
+}
+
+.loading-info__text {
+  width: 25%;
+  height: 21px;
+}
+
+.loading-info__text:last-child {
+  animation-delay: 0.5s;
+}
+
+@media (min-width: 600px) {
+  .loading-info__text {
+    height: 26px;
+  }
+}

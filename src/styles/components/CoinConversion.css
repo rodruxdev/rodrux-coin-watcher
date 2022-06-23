@@ -1,0 +1,61 @@
+.input-convertor {
+  width: 210px;
+  height: 50px;
+}
+
+.input-convertor__input,
+.input-convertor__loading-container {
+  width: 100%;
+  height: 100%;
+  padding: 16px 10px;
+  text-align: end;
+  background-color: transparent;
+  border-radius: 8px;
+  border: var(--dark-border);
+}
+
+.input-convertor__input:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--secondary);
+}
+
+.input-convertor__loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.input-convertor__loading {
+  width: 25%;
+  height: 21px;
+}
+
+@media (min-width: 600px) {
+  .input-convertor {
+    width: 315px;
+    height: 75px;
+  }
+  .input-convertor__input,
+  .input-convertor__loading-container{
+    padding-right: 20px;
+    border-radius: 16px;
+  }
+  .input-convertor__loading {
+    height: 26px;
+  }
+}
+
+@media (min-width: 950px) {
+  .input-convertor {
+    min-width: 250px;
+    width: 70%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .input-convertor {
+    min-width: initial;
+    width: 190px;
+  }
+}

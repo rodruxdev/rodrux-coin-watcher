@@ -1,0 +1,9 @@
+.hero-text {
+  width: 95vw;
+  max-width: 850px;
+  margin: 30px auto;
+}
+
+.hero-text__paragraph {
+  margin-top: 10px;
+}

@@ -1,0 +1,130 @@
+.table-container {
+  width: 95vw;
+  max-width: 1250px;
+  padding-bottom: 10px;
+  overflow-x: auto;
+}
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+.table-container::-webkit-scrollbar-thumb{
+  background-color: var(--scrollbar-thumb);
+}
+
+.table-container__table {
+  width: max-content;
+  border-collapse: collapse;
+}
+
+th,
+tr:nth-child(2n) td{
+  border-bottom: var(--primary-border);
+}
+
+td {
+  border-bottom: var(--secondary-border);
+}
+
+.table-head {
+  height: 25px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: inherit;
+}
+
+.table-row {
+  height: 40px;
+}
+
+.table-row--right {
+  text-align: end;
+}
+
+.table-row--left {
+  text-align: start;
+}
+
+.table-row--center {
+  text-align: center;
+}
+
+.table-col__id {
+  width: 40px;
+}
+
+.table-col__coin {
+  width: 100px;
+}
+
+.table-col__price {
+  width: 140px;
+}
+
+.table-col__medium {
+  width: 120px;
+}
+
+.table-col__large {
+  width: 180px;
+}
+
+.table-row__last {
+  padding-right: 10px;
+}
+
+.table-row__coin {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.table-row__coin-name {
+  display: none;
+}
+
+.image-container {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 600px) {
+  .table-head {
+    height: 38px;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+  }
+  .table-row {
+    height: 55px;
+  }
+  .table-col__id {
+    width: 50px;
+  }
+  .table-col__coin {
+    width: fit-content;
+  }
+  .table-col__price {
+    width: calc(150px + 5vw);
+  }
+  .table-col__medium {
+    width: 160px;
+  }
+  .table-col__large {
+    width: 250px;
+  }
+  .table-row__coin-name {
+    display: inline;
+  }
+  .image-container {
+    width: 25px;
+    height: 25px;
+  }
+}

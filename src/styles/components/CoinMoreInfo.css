@@ -1,0 +1,12 @@
+.info {
+  width: 100%;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--primary-border);
+}
+
+.info:nth-child(2n + 1) {
+  border-bottom: var(--secondary-border);
+}

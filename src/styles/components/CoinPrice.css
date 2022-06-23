@@ -1,0 +1,43 @@
+.price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price__coin-container{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price__image-container {
+  width: 26px;
+  height: 26px;
+}
+
+.price__price {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: var(--primary);
+}
+
+@media (min-width: 600px) {
+  .price__image-container {
+    width: 35px;
+    height: 35px;
+  }
+
+  .price__price{
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .price__price {
+    color: var(--secondary);
+  }
+}

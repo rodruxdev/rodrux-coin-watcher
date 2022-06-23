@@ -1,0 +1,37 @@
+.exchange {
+  width: 110px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exchange:focus{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--dark);
+}
+
+.exchange option {
+  background-color: var(--background);
+  color: var(--dark);
+}
+
+@media (min-width: 600px) {
+  .exchange {
+    width: 165px;
+    height: 53px;
+    padding: 5px;
+    border-radius: 14px;
+  }
+}
+
+@media (min-width: 950px) {
+  .exchange {
+    width: 95%;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,191 @@
+:root {
+  --primary: #0C45AD;
+  --secondary: #FF702E;
+  --background: #E9E6E9;
+  --black: #060B10;
+  --dark: #1E3242;
+  --error: #991802;
+  --primary-border: 2px solid var(--primary);
+  --secondary-border: 2px solid var(--secondary);
+  --dark-border: 2px solid var(--dark);
+  --scrollbar-track: #1E324250;
+  --scrollbar-thumb: #060B10CC;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Chakra Petch';
+}
+
+html {
+  color: var(--black);
+  font-size: 62.5%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--background);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+h1, h2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+  text-align: center;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+p, a, span, input, button, select, h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  color: inherit;
+}
+
+h4 {
+  padding-left: 15px;
+  font-weight: 600;
+}
+
+a:visited {
+  color: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+}
+
+select {
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
+}
+
+.blue-box,
+.blue-box.loading {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.orange-box {
+  background-color: var(--secondary);
+  color: var(--black);
+}
+
+.loading {
+  background-color: var(--black);
+  opacity: 0.6;
+  animation: blink 1.5s infinite linear;
+}
+
+@keyframes blink {
+  0%{
+    opacity: 0.2;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 0.2;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (min-width: 600px) {
+  h1, h2 {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+  }
+  p, a, span, input, button, select, h4 {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1E3242;
+    --dark: #E9E6E9;
+    --black: #E9E6E9;
+    --scrollbar-track: #060B10CC;
+    --scrollbar-thumb: #E9E6E9CC;
+  }
+  .blue-box {
+    color: var(--dark);
+  }
+  .orange-box {
+    color: #060B10;
+  }
+}
