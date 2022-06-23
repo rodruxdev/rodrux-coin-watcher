@@ -23,6 +23,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCoin } from '@slices/coinSlice';
 import { useParams } from 'react-router-dom';
 import '@styles/pages/CoinPage.css';
+import { cleanError } from '../slices/uiSlice';
 
 function CoinPage() {
   const { id } = useParams();
@@ -54,6 +55,9 @@ function CoinPage() {
   useEffect(() => {
     const currentScroll =
       document.documentElement.scrollTop || document.body.scrollTop;
+    if (error.section) {
+      dispatch(cleanError());
+    }
     dispatch(fetchCoin(id));
     if (currentScroll > 0) {
       window.scrollTo({
